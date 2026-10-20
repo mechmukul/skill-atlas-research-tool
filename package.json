@@ -1,0 +1,12 @@
+{
+  "name": "skill-atlas",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix dashboard start",
+    "stop": "node dashboard/scripts/start-local.mjs --stop",
+    "app:mac": "node dashboard/scripts/build-mac-app.mjs",
+    "test": "npm test --prefix dashboard",
+    "typecheck": "npm run typecheck --prefix dashboard",
+    "build": "npm run build --prefix dashboard"
+  }
+}

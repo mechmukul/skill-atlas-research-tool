@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {overlap,compareProfiles,buildTimeline,timelineArchive,standaloneTimeline} from '../lib/research-timeline.ts';
+const data={records:[],statements:[],importedAt:'2026-10-06T23:30:00Z'};
+const state={notes:{'reading-bank:s1':'selected'},themes:[],drafts:{}};
+test('Jaccard uses distinct features and distinguishes empty coding',()=>{assert.equal(overlap(['a','a','b'],['b','c']).score,1/3);assert.equal(overlap([],[]).score,null);assert.equal(overlap(['a'],['b']).score,0)});
+test('type cosine compares profile proportions',()=>{const p={types:{quote:2,finding:2}};assert.ok(Math.abs(compareProfiles(p,{types:{quote:1,finding:1}},'types').score-1)<1e-12);assert.equal(compareProfiles(p,{types:{oversight:1}},'types').score,0)});
+test('history uses recorded dates and deduplicated run identity, never dates selections',()=>{const events=buildTimeline(data,state,{papers:[{id:'a',visualRunId:'r'},{id:'b',visualRunId:'r'}],batches:[]},[{id:'r',status:'completed',updatedAt:'2026-10-07T12:00Z'}]);assert.equal(events.length,2);assert.equal(events[0].date,'2026-10-07');assert.match(events.find(e=>e.stage==='extract').title,/1 completed/);assert.equal(events.some(e=>e.stage==='collect'),false)});
+test('archive preserves scope and safely embeds text in standalone JavaScript',()=>{const a=timelineArchive([{id:'x',date:'2026-10-01',title:'</script><img>',detail:''}],data,state,[],{scope:'all',strand:'I1'});assert.equal(a.comparisonScope.strand,'I1');const html=standaloneTimeline(a);assert.equal(html.includes('</script><img>'),false);const script=html.match(/<script>([\s\S]*)<\/script>/)[1];assert.doesNotThrow(()=>new vm.Script(script));assert.match(html,/Evidence-type profile/)});

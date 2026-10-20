@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {activities,defaultActivity} from '../lib/skill-recommendations.ts';
+import {atlasIntegrations} from '../lib/atlas-integrations.ts';
+test('recommendations route reading, screening, comparison and maintenance to distinct workflows',()=>{assert.equal(defaultActivity('papers'),'read');assert.equal(defaultActivity('screening'),'screen');assert.equal(defaultActivity('connections'),'compare');assert.equal(defaultActivity('settings'),'maintenance');assert.ok(!activities.read.integrations.includes('ecc'));});
+test('each displayed workflow resolves repository recommendations and has a human review step',()=>{for(const workflow of Object.values(activities)){assert.equal(workflow.steps.length,3);for(const id of workflow.integrations)assert.ok(atlasIntegrations.some(i=>i.id===id),id);assert.ok(workflow.steps.every(s=>s.trim().length>10));}});

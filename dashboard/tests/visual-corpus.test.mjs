@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {uniqueVisualPapers} from '../lib/visual-corpus.ts';
+test('exact duplicates count once and prefer the available extraction without mutating input',()=>{const papers=[{id:'a',sha256:'same'},{id:'b',sha256:'same',duplicateOf:'a',visualRunId:'run'},{id:'c',sha256:'different'}];assert.deepEqual(uniqueVisualPapers(papers).map(p=>p.id),['b','c']);assert.deepEqual(papers.map(p=>p.id),['a','b','c']);});
+test('distinct PDFs with the same title are retained and explicit legacy duplicates deduplicate',()=>{const papers=[{id:'a',title:'Title'},{id:'b',title:'Title'},{id:'dup',duplicateOf:'a'}];assert.equal(uniqueVisualPapers(papers).length,2);});

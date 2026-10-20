@@ -1,0 +1,16 @@
+"use client";
+import {useEffect,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {FileText} from 'lucide-react';
+import {api} from '@/lib/research';
+
+const covers=new Map<string,string>();
+let queue:Promise<unknown>=Promise.resolve();
+function cover(id:string){const cached=covers.get(id);if(cached)return Promise.resolve(cached);const task=queue.then(async()=>{if(covers.has(id))return covers.get(id)!;let page:{image:string}|undefined;for(let attempt=0;attempt<3;attempt++){try{page=await api<{image:string}>(`/paper-search/${encodeURIComponent(id)}/page?page=1`);break;}catch(e){if(attempt===2||!(e as Error).message.includes('Another page is loading'))throw e;await new Promise(resolve=>setTimeout(resolve,400*(attempt+1)));}}if(!page)throw Error('Preview rendering did not return an image.');covers.set(id,page.image);if(covers.size>36)covers.delete(covers.keys().next().value!);return page.image;});queue=task.catch(()=>{});return task;}
+export function PdfCover({id,title,strands=[],onOpen}:{id:string;title:string;strands?:string[];onOpen:()=>void}){
+ const [preview,setPreview]=useState(false);const hoverTimer=useRef<ReturnType<typeof setTimeout>|null>(null);const stop=()=>{if(hoverTimer.current)clearTimeout(hoverTimer.current);setPreview(false);};
+ useEffect(()=>{const close=(e:KeyboardEvent)=>{if(e.key==='Escape')stop();};window.addEventListener('keydown',close);window.addEventListener('scroll',stop,true);return()=>{if(hoverTimer.current)clearTimeout(hoverTimer.current);window.removeEventListener('keydown',close);window.removeEventListener('scroll',stop,true);};},[]);
+ const ref=useRef<HTMLButtonElement>(null);const [image,setImage]=useState(covers.get(id)||''),[failed,setFailed]=useState(false);
+ useEffect(()=>{let alive=true;const target=ref.current;if(!target)return;const observer=new IntersectionObserver(entries=>{if(!entries.some(e=>e.isIntersecting))return;observer.disconnect();queue=queue.catch(()=>{});if(alive)cover(id).then(src=>{if(alive)setImage(src);}).catch(()=>{if(alive)setFailed(true);});},{rootMargin:'120px'});observer.observe(target);return()=>{alive=false;observer.disconnect();};},[id]);
+ return <><button ref={ref} className="pdf-cover" onPointerEnter={e=>{if(e.pointerType==='mouse')hoverTimer.current=setTimeout(()=>setPreview(true),450);}} onPointerLeave={stop} onFocus={()=>setPreview(true)} onBlur={stop} onClick={()=>{stop();onOpen();}} aria-label={`Open PDF: ${title}`}><span className="pdf-book-inside" aria-hidden="true"><b>{title}</b><span>Click to read the paper</span></span><span className="pdf-cover-sheet">{image?<img src={image} alt={`First page of ${title}`} loading="lazy"/>:<span className="pdf-cover-placeholder"><FileText size={36}/><span>{failed?'Preview unavailable · click to read':'Loading first-page preview…'}</span></span>}</span><span className="pdf-cover-caption">PDF · First page <span aria-hidden="true">↗</span></span></button>{preview&&image&&createPortal(<div className="pdf-hover-preview" aria-hidden="true"><div><strong>{title}</strong><p>{strands.join(' · ')}</p><img src={image} alt=""/><small>Click the cover to open the reader · Escape dismisses preview</small></div></div>,document.body)}</>;
+}

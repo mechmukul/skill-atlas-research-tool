@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {agreement,readAssessments,networkEdges,networkPositions} from '../lib/evidence-landscape.ts';
+const p=(id,tags,strand='I1')=>({id,constructs:tags,types:{quote:2},rows:[],strand,programme:''});
+test('agreement excludes unclear and incomparable units and never fabricates an empty percentage',()=>{assert.equal(agreement([]).percentage,null);const a=agreement(['supports','contradicts','qualifies','unclear','not comparable'].map(relation=>({relation})));assert.equal(a.denominator,3);assert.equal(a.percentage,100/3)});
+test('network removes reciprocal duplicates and respects similarity threshold',()=>{const edges=networkEdges([p('a',['x']),p('b',['x']),p('c',['z'])],'constructs',.5);assert.deepEqual(edges,[{a:'a',b:'b',score:1}]);assert.deepEqual(networkEdges([p('a',[]),p('b',[])],'constructs',0),[])});
+test('positions are deterministic and finite for single and multiple clusters',()=>{const list=[p('a',['x']),p('b',['x'],'I2')];assert.deepEqual(networkPositions(list,'strand'),networkPositions(list,'strand'));assert.ok(networkPositions([list[0]],'strand').every(n=>Number.isFinite(n.x)&&Number.isFinite(n.y)))});
+test('malformed saved assessments cannot silently overwrite the register',()=>{assert.throws(()=>readAssessments('{}'));assert.throws(()=>readAssessments('[{"id":"x"}]'));assert.deepEqual(readAssessments(undefined),[])});

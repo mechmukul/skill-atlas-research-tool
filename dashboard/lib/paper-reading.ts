@@ -1,0 +1,6 @@
+import {deferReadingPage} from './reading-progress.ts';
+import type {Row,SlrState} from './synthesis.ts';
+export const evidenceKinds=[['quote','Quote','❝'],['finding','Finding','◆'],['oversight_evidence','Oversight evidence','◉'],['author_gap','Author-stated gap','◇'],['author_limitation','Author limitation','△']];
+export function groupReadingPapers(rows:Row[]){const groups=new Map<string,Row[]>();for(const row of rows){const group=groups.get(row.record_id)||[];group.push(row);groups.set(row.record_id,group);}return [...groups].map(([id,statements])=>({id,source:statements[0],statements}));}
+export function paperReadingStatus(rows:Row[],state:SlrState){return {collected:rows.filter(s=>state.notes['reading-bank:'+s.statement_id]==='selected'),later:rows.filter(s=>state.notes['reading-bank:'+s.statement_id]!=='selected'&&state.notes['reading-decision:'+s.statement_id]==='not-selected'),unread:rows.filter(s=>state.notes['reading-bank:'+s.statement_id]!=='selected'&&state.notes['reading-decision:'+s.statement_id]!=='not-selected')};}
+export function passPresentedEvidence(state:SlrState,presented:Row[],next?:Row){const unread=paperReadingStatus(presented,state).unread;const result=deferReadingPage(state,unread,next?.statement_id||'');if(next)result.notes['reading-position:'+next.strand]=next.statement_id;return result;}

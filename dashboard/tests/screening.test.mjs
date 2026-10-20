@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {screeningGroups,finalSelection,screeningNote} from '../lib/screening.ts';
+const p=(id,sha256,decision,reviewed=true)=>({id,sha256,title:id,filename:id+'.pdf',batchId:'strand',decision,reviewed,notes:'My existing interpretation',pages:4});
+test('final selection deduplicates and excludes undecided, excluded, unreviewed and conflicting copies',()=>{const papers=[p('a','same','include'),p('b','same','include'),p('c','different','exclude'),p('d','pending','undecided'),p('e','unreviewed','include',false),p('f','conflict','include'),p('g','conflict','exclude')];assert.equal(screeningGroups(papers).length,5);assert.equal(screeningGroups(papers).find(g=>g.records.some(p=>p.id==='f')).decision,'conflict');assert.equal(finalSelection(papers).length,1);assert.deepEqual(finalSelection(papers)[0].records.map(p=>p.id),['a','b']);assert.equal(papers[0].notes,'My existing interpretation');});
+test('screening notes preserve prior notes and timestamped decision history',()=>{const first=screeningNote('Existing note','exclude','Wrong population','2026-09-26');const second=screeningNote(first,'include','Revised scope','2026-09-27');assert.ok(second.startsWith('Existing note'));assert.match(second,/Decision: exclude/);assert.match(second,/Decision: include/);assert.match(second,/2026-09-27/);});

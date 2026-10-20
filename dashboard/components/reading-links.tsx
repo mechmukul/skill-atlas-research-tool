@@ -1,0 +1,28 @@
+'use client';
+import {createContext,useContext,useState,useRef,type ReactNode} from 'react';
+import {createPortal} from 'react-dom';
+export type PeekTarget={kind:'evidence'|'document'|'term'|'section';id:string};
+export const researchTerms=[
+ ['management-oriented assurance framework','Organisational arrangements for deciding, overseeing and demonstrating that delegated AI actions remain within agreed authority and risk limits.','An MSSP and client agree approval thresholds, escalation owners and audit evidence.'],
+ ['state-changing','An action that alters a system, access permission, configuration or operational condition.','Isolating an endpoint, disabling an account or changing a firewall rule.'],
+ ['agentic AI','AI that pursues a task through decisions and tool actions within delegated permissions.','An agent investigates an alert and requests or executes containment.'],
+ ['human oversight','People can understand, monitor and intervene in an AI-supported process with appropriate authority and support.','An analyst can stop a containment workflow and escalate to the client.'],
+ ['accountability','Allocated responsibilities and arrangements for explaining, reviewing and responding to decisions and consequences.','A named owner reviews why an agent revoked access and records corrective action.'],
+ ['decision authority','Permission and responsibility to decide or approve an action within defined limits.','An MSSP may isolate a workstation but needs approval to disable production.'],
+ ['reversibility','The extent to which an action and its consequences can be undone or recovered from.','Restoring a rule does not necessarily recover disrupted transactions.'],
+ ['MSSP','Managed security service provider: an organisation delivering security services to clients.','A contracted provider monitors alerts and performs agreed response tasks.'],
+ ['HITL','Human in the loop: a person participates in a decision or approval step. Confirm each source’s usage.','An analyst approves isolation before execution.'],
+ ['HOTL','Human on the loop: a person monitors and may intervene. Confirm each source’s usage.','An analyst monitors automatic containment and can stop it.'],
+].map(([term,definition,example])=>({term,definition,example}));
+type ContextValue={peek:(t:PeekTarget)=>void;navigate:(t:PeekTarget)=>void;hasEvidence:(id:string)=>boolean;documents:string[];sections:string[]};
+const Context=createContext<ContextValue|null>(null);
+export const ReadingLinksProvider=Context.Provider;
+function Reference({target,children}:{target:PeekTarget;children:ReactNode}){const ctx=useContext(Context);return <span className="atlas-reference"><button className="atlas-reference-link" onClick={()=>ctx?.peek(target)} aria-label={`Peek ${String(children)}`}>{children}</button><span className="atlas-reference-menu"><button onClick={()=>ctx?.peek(target)}>Peek ↗</button><button onClick={()=>ctx?.navigate(target)}>Go to section →</button></span></span>;}
+function DefinedTerm({index,text}:{index:number;text:string}){
+ const ctx=useContext(Context);const [open,setOpen]=useState(false);const [position,setPosition]=useState({left:0,top:0});const timer=useRef<ReturnType<typeof setTimeout>|null>(null);const item=researchTerms[index];
+ function show(element:HTMLElement){if(timer.current)clearTimeout(timer.current);const rect=element.getBoundingClientRect();setPosition({left:Math.max(12,Math.min(rect.left,window.innerWidth-344)),top:Math.max(12,Math.min(rect.bottom+8,window.innerHeight-320))});setOpen(true);}
+ function hide(){timer.current=setTimeout(()=>setOpen(false),180);}
+ return <span className="atlas-term" onMouseLeave={hide}><button className="atlas-term-trigger" aria-expanded={open} onMouseEnter={e=>show(e.currentTarget)} onFocus={e=>show(e.currentTarget)} onBlur={hide} onClick={e=>show(e.currentTarget)}>{text}</button>{open&&createPortal(<span className="atlas-term-card" style={{position:'fixed',...position}} role="note" onMouseEnter={()=>{if(timer.current)clearTimeout(timer.current);}} onMouseLeave={hide} onMouseDown={e=>e.preventDefault()}><strong>{item.term}</strong><span>Working definition: {item.definition}</span><span><b>Illustrative example:</b> {item.example}</span><small>Atlas working glossary · not a source quotation</small><button onClick={()=>{ctx?.peek({kind:'term',id:item.term});setOpen(false);}}>Keep open in reading panel ↗</button></span>,document.body)}</span>;
+}
+const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+export function ReadingText({text}:{text:string}){const ctx=useContext(Context);if(!ctx)return <>{text}</>;const labels=[...researchTerms.map(x=>x.term),...ctx.documents,...ctx.sections].filter(Boolean).sort((a,b)=>b.length-a.length);const regex=new RegExp('(?<![\\w-])(?:R\\d+-S\\d+|'+labels.map(escape).join('|')+')(?![\\w-])','gi');const parts:ReactNode[]=[];let start=0;for(const match of text.matchAll(regex)){const index=match.index!;parts.push(text.slice(start,index));const value=match[0];const term=researchTerms.findIndex(t=>t.term.toLowerCase()===value.toLowerCase());if(term>=0)parts.push(<DefinedTerm key={index} index={term} text={value}/>);else if(ctx.hasEvidence(value.toUpperCase()))parts.push(<Reference key={index} target={{kind:'evidence',id:value.toUpperCase()}}>{value}</Reference>);else{const document=ctx.documents.find(d=>d.toLowerCase()===value.toLowerCase());const section=ctx.sections.find(s=>s.toLowerCase()===value.toLowerCase());parts.push(document||section?<Reference key={index} target={{kind:document?'document':'section',id:document||section!}}>{value}</Reference>:value);}start=index+value.length;}parts.push(text.slice(start));return <>{parts}</>;}

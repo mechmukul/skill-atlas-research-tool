@@ -1,0 +1,3 @@
+export const rankingNames:Record<string,string>={SJR:'SCImago Journal Rank (SJR)',JCR:'Journal Citation Reports (JCR) · Journal Impact Factor (JIF)'};
+export function quartileLabel(q:string){return ({Q1:'Q1 · First quartile (top 25%)',Q2:'Q2 · Second quartile (25–50%)',Q3:'Q3 · Third quartile (50–75%)',Q4:'Q4 · Fourth quartile (bottom 25%)'} as Record<string,string>)[q]||'Quartile not verified';}
+export function hasDocumentedQ1(m:{quartile:string;category:string;sourceUrl:string;sourceEvidence:string}){return m.quartile==='Q1'&&!!m.category.trim()&&!/unknown|not verified|not available|overall|best quartile/i.test(m.category)&&/^https:\/\//.test(m.sourceUrl)&&!!m.sourceEvidence.trim();}

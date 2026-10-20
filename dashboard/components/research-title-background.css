@@ -1,0 +1,11 @@
+/* An isolated layer beneath the cards. The duplicate lettering adds only a masked glow. */
+.studio-main:has(>.research-title-background){position:relative;isolation:isolate}
+.research-title-background{position:absolute;inset:0;z-index:-1;pointer-events:none;user-select:none;overflow:hidden;--title-x:50%;--title-y:40%;color:var(--primary)}
+.research-title-lettering{position:absolute;top:clamp(160px,25vh,320px);left:6%;right:6%;font-family:var(--atlas-font-heading,Georgia,serif);text-align:center;opacity:.045;line-height:1.04;letter-spacing:-.035em;filter:blur(.15px)}
+.research-title-lettering>span{display:block}.research-title-lettering>span:first-child{font-size:clamp(48px,7.8vw,130px);font-weight:500}.research-title-lettering>span:nth-child(2){font-size:clamp(20px,2.7vw,42px);margin-top:26px;letter-spacing:-.015em}.research-title-lettering>span:nth-child(3){font-size:clamp(15px,1.8vw,28px);margin-top:14px;letter-spacing:.025em}
+.research-title-reveal{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;mask-image:radial-gradient(ellipse 340px 230px at var(--title-x) var(--title-y),#000 0%,#0009 42%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 340px 230px at var(--title-x) var(--title-y),#000 0%,#0009 42%,transparent 100%)}
+.research-title-reveal .research-title-lettering{opacity:.09;color:transparent;background:linear-gradient(110deg,#818cf8,#a78bfa,#60a5fa);background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 0 14px #a78bfa20)}
+.research-title-background[data-revealed=true] .research-title-reveal{opacity:1;transition-duration:.35s}
+.dark .research-title-lettering{opacity:.055}.dark .research-title-reveal .research-title-lettering{opacity:.10}
+@media(max-width:650px){.research-title-lettering{top:210px;left:4%;right:4%}.research-title-lettering>span:first-child{font-size:48px}.research-title-lettering>span:nth-child(2){font-size:21px;line-height:1.3}.research-title-lettering>span:nth-child(3){font-size:15px;line-height:1.4}}
+@media(prefers-reduced-motion:reduce),(hover:none){.research-title-reveal{display:none}.research-title-lettering{filter:none}}
