@@ -4,6 +4,32 @@
 
 Skill Atlas brings your papers, research questions, AI-assisted analyses, evidence passages, personal notes, screening decisions and writing together. Open it as a Mac application without opening ChatGPT, or use it in your browser. Create a researcher profile and keep up to **five separate research topics**, each with its own files, database, drafts and analysis history.
 
+## A look inside Skill Atlas
+
+Explore the welcome screen, research workspace and paper library in light and dark themes.
+
+![Skill Atlas dark welcome screen with collapsed reading and evidence progress](docs/screenshots/welcome-dark.png)
+
+| Research workspace | Paper library |
+| --- | --- |
+| ![Collect, verify, read and write in one research workspace](docs/screenshots/research-workspace.png) | ![Paper library with PDF covers, source details and collected evidence](docs/screenshots/paper-library.png) |
+| Collect evidence, appraise sources and develop your review. | Keep papers, notes and evidence connected to their sources. |
+
+<details>
+<summary>See the paper preview and light welcome screen</summary>
+
+![Enlarged first-page preview of a paper in the library](docs/screenshots/paper-preview.png)
+
+Preview a paper before opening the reader.
+
+![Skill Atlas light welcome screen with expanded reading and evidence metrics](docs/screenshots/welcome-light.png)
+
+Expand the progress widget to see reading, collection and verification separately.
+
+</details>
+
+Screenshots show an example populated workspace; fresh installations start empty. The owl is a separate desktop companion overlay.
+
 ## What it does
 
 | Research material | How Atlas helps |

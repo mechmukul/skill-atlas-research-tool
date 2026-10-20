@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8154,
-      "sha256": "27e7f2ebf1a212dcf64d855385b4ecbb4e5f25ff144d55bfd3710e1557450407"
+      "bytes": 9347,
+      "sha256": "33f119da6d251fc9ffce8da220763953ab34e44e910916a54563ccf2f5732bac"
     },
     {
       "path": "Start Skill Atlas.command",
@@ -64,6 +64,11 @@
       "path": "dashboard/cloudflare-env.d.ts",
       "bytes": 99,
       "sha256": "8b0eca84aa3364cc7ccc43cc3af6beb88dd34ebd410de08690bf094ce39fbcb0"
+    },
+    {
+      "path": "dashboard/components.json",
+      "bytes": 420,
+      "sha256": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd"
     },
     {
       "path": "dashboard/components/Lanyard.css",
@@ -751,11 +756,6 @@
       "sha256": "dc7baac9ae0ef0fa3b27763803fa61abd25b62de5261024b1d8c54ae0401a126"
     },
     {
-      "path": "dashboard/components.json",
-      "bytes": 420,
-      "sha256": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd"
-    },
-    {
       "path": "dashboard/db/index.ts",
       "bytes": 423,
       "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd"
@@ -772,8 +772,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 8154,
-      "sha256": "27e7f2ebf1a212dcf64d855385b4ecbb4e5f25ff144d55bfd3710e1557450407"
+      "bytes": 9347,
+      "sha256": "33f119da6d251fc9ffce8da220763953ab34e44e910916a54563ccf2f5732bac"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -791,14 +791,14 @@
       "sha256": "5b55b9ccc72e857c575430d2440e5b3b44e79daf40020f55de2ed950f88c3b1f"
     },
     {
-      "path": "dashboard/drizzle/meta/_journal.json",
-      "bytes": 61,
-      "sha256": "90cb374e093894d0efce6f1830d873a42aadd8ba49d2f024495e5cb2e1c8c303"
-    },
-    {
       "path": "dashboard/drizzle.config.ts",
       "bytes": 148,
       "sha256": "af081f7384aaeb0082cf422e29f139d137ca2f6a57c69b2c37b9fb1f8479867b"
+    },
+    {
+      "path": "dashboard/drizzle/meta/_journal.json",
+      "bytes": 61,
+      "sha256": "90cb374e093894d0efce6f1830d873a42aadd8ba49d2f024495e5cb2e1c8c303"
     },
     {
       "path": "dashboard/eslint.config.mjs",
@@ -1047,8 +1047,8 @@
     },
     {
       "path": "dashboard/scripts/package-skeleton.mjs",
-      "bytes": 4178,
-      "sha256": "b631f15e54939fb79ed643615baf763e59563797f6715a47ac0cbe685b9e4761"
+      "bytes": 4401,
+      "sha256": "4e001b7181a1585510bc8952c259712f3e96fefc36456ecc0002dd4df9d5d5f5"
     },
     {
       "path": "dashboard/scripts/start-local.mjs",
@@ -1409,6 +1409,31 @@
       "path": "dashboard/workflows/research-agent/SKILL.md",
       "bytes": 400,
       "sha256": "dcc634c22916f41f683bb054dd9efa74ec701eb44e27852189fad9fb0e2267f3"
+    },
+    {
+      "path": "docs/screenshots/paper-library.png",
+      "bytes": 2584098,
+      "sha256": "8432bfd5923112e75c8774f382bddd4e4ec9c2f62c123d40ba72383dc4f18787"
+    },
+    {
+      "path": "docs/screenshots/paper-preview.png",
+      "bytes": 2431441,
+      "sha256": "25f9d46caae53ac346f45da4f9815230b74ed6984337f22be48adc59b1a15aab"
+    },
+    {
+      "path": "docs/screenshots/research-workspace.png",
+      "bytes": 604090,
+      "sha256": "15e7b2121ba0de057007b325e7b3064f4acdc591b308f36c7745f7cec1481f14"
+    },
+    {
+      "path": "docs/screenshots/welcome-dark.png",
+      "bytes": 1053165,
+      "sha256": "546e1f226fcab4be5ae467c547ee05d629573037eebe40fea52f418a2bb78559"
+    },
+    {
+      "path": "docs/screenshots/welcome-light.png",
+      "bytes": 3527834,
+      "sha256": "36393ab97ff5ac2c2b61826c1a9c310753f1d99c6d339be191a6f87cb785fd09"
     },
     {
       "path": "package.json",

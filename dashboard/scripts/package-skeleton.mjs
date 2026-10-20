@@ -13,6 +13,8 @@ fs.mkdirSync(path.join(app,'scripts'),{recursive:true});for(const name of ['star
 fs.mkdirSync(path.join(app,'public'),{recursive:true});for(const name of ['favicon.svg','file.svg','globe.svg','window.svg'])fs.copyFileSync(path.join(workspace,'dashboard/public',name),path.join(app,'public',name));
 fs.writeFileSync(path.join(app,'public/atlas-integrations.json'),JSON.stringify({sources:[],generatedAt:null}));
 for(const name of ['Start Skill Atlas.command','Stop Skill Atlas.command']){fs.copyFileSync(path.join(workspace,name),path.join(destination,name));fs.chmodSync(path.join(destination,name),0o755);}
+const screenshots=path.join(workspace,'docs/screenshots');
+if(fs.existsSync(screenshots))fs.cpSync(screenshots,path.join(destination,'docs/screenshots'),{recursive:true,filter:source=>path.basename(source)!=='.DS_Store'});
 fs.copyFileSync(path.join(workspace,'dashboard/desktop/PUBLIC-README.md'),path.join(destination,'README.md'));
 fs.copyFileSync(path.join(workspace,'dashboard/desktop/VALIDATION.md'),path.join(destination,'VALIDATION.md'));
 fs.writeFileSync(path.join(destination,'package.json'),JSON.stringify({name:'skill-atlas',private:true,scripts:{start:'npm --prefix dashboard start',stop:'node dashboard/scripts/start-local.mjs --stop','app:mac':'node dashboard/scripts/build-mac-app.mjs',test:'npm test --prefix dashboard',typecheck:'npm run typecheck --prefix dashboard',build:'npm run build --prefix dashboard'}},null,2));
