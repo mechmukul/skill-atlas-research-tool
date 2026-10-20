@@ -1,6 +1,33 @@
 # Skill Atlas
 
-A local research workspace for your own papers, evidence, notes and writing. Create a researcher profile and up to five separate research topics. Each topic has its own SQLite database, source files, reading progress, drafts and Codex conversations. New installations start empty; no research papers or personal data are included.
+**Keep your research in one local workspace—from the first paper to a source-linked draft.**
+
+Skill Atlas brings your papers, research questions, AI-assisted analyses, evidence passages, personal notes, screening decisions and writing together. Open it as a Mac application without opening ChatGPT, or use it in your browser. Create a researcher profile and keep up to **five separate research topics**, each with its own files, database, drafts and analysis history.
+
+## What it does
+
+| Research material | How Atlas helps |
+| --- | --- |
+| Papers and supporting files | Import PDF folders for reading and review; attach other research files to analysis tasks. Keep source copies alongside their project records. |
+| Reading and searching | Search extracted PDF text, open physical source pages, use page buttons or continuous scrolling, and return to saved reading positions. |
+| Understanding a paper | Optionally connect your authenticated Codex CLI to run source-grounded paper reading and appraisal workflows. Saved tasks can be continued later. |
+| Evidence and highlights | Inspect exact text anchors, collect evidence, bookmark passages, and navigate category markers beside the PDF. Source-page references keep claims connected to their context. |
+| Your own judgement | Record personal notes, screening choices, appraisal, themes and source-support checks separately from AI drafts. |
+| Writing and continuity | Keep review questions, scope, writing sections and drafts in the same topic. Export drafts and backups; use task history to see how analysis developed. |
+
+## Why it is useful
+
+Research often gets split between PDF folders, notes, AI chats, spreadsheets and draft documents. Atlas gives those pieces a common place and a route back to the source. You can find a passage, inspect its context, record what you think it means, and carry it into your review without losing the paper and page behind it.
+
+For example: create a topic → import papers → define the research question → analyse selected papers with Codex → check the original passages → keep your notes and screening decisions → compare evidence and write. You can pause and return to the same topic with its saved material and conversation history. Separate topics help keep unrelated projects from mixing.
+
+## PDF reader and highlight markers
+
+The reader groups page navigation, reading mode, zoom and tools into aligned controls. Reading progress and category filters have their own disclosure. On narrow readers, the inspector opens **below the PDF**, keeping the page visible; it has a dedicated close control.
+
+Clickable coloured markers sit beside the page: **G** Goal, **M** Method, **R** Result, **L** Limitation, **C** Contribution and **E** Evidence. The number identifies a passage on that page. Select a marker to inspect the associated passage; hover or focus it for its label. Markers appear for located source text, not for every item in an AI analysis. A page reference without an exact text anchor remains unhighlighted. Highlights and markers can be switched off in the reader.
+
+AI analysis is an aid to your review. An exact text match establishes a location, not that a claim is true or adequately supported. Author claims, AI interpretations and your decisions remain distinct. Page coverage, fully read confirmation, evidence collection and source verification are separate progress measures.
 
 ## Start
 

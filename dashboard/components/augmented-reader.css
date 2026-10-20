@@ -28,3 +28,64 @@
 @container (max-width:400px){.ar-source-search{grid-template-columns:1fr!important;gap:6px!important}}
 /* Transparent selection glyphs must not enlarge the page's scrollable area. */
 .aug-reader .ar-text-layer,.aug-reader .ar-overlays{overflow:clip}
+
+/* Organised PDF controls, explicit progress disclosure, and visible marker gutter. */
+.aug-reader{container-type:inline-size;container-name:pdf-reader}
+.aug-reader .ar-toolbar-organised{display:grid;grid-template-columns:1fr;gap:10px;padding:0 0 10px;align-items:stretch}
+.ar-page-controls{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-width:0}
+.ar-toolbar-organised .ar-page-controls label{display:flex;align-items:center;gap:6px;margin:0;font-size:12px}
+.ar-toolbar-organised .ar-page-controls input{width:54px;height:32px;min-width:0;margin:0;padding:4px 5px;text-align:center;box-sizing:border-box}
+.ar-page-controls .ar-page-total{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ar-page-controls small{font-size:11px;white-space:nowrap;color:var(--muted-foreground)}
+.ar-toolbar-organised .ar-view-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
+.ar-toolbar-organised .ar-view-controls>label{display:grid;grid-template-columns:1fr;gap:5px;min-width:0;font-size:11px;line-height:1.4;margin:0}
+.ar-toolbar-organised .ar-view-controls select{width:100%;max-width:100%;height:32px;min-height:32px;margin:0;padding:5px 8px;font-size:12px;box-sizing:border-box}
+.ar-tool-actions{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.aug-reader .ar-toolbar-organised [data-slot=button]{height:32px;min-height:32px;padding:5px 9px;font-size:12px;line-height:1.3;border-radius:8px;box-sizing:border-box}
+.ar-toolbar-organised .ar-tool-actions>a{margin-left:0;padding:6px 4px;font-size:11px}
+.ar-tool-actions [aria-pressed=true]{border-color:var(--primary)}
+.aug-reader .ar-controls-fold{max-height:44%;overflow:auto;overscroll-behavior:contain;min-height:0}
+.aug-reader .ar-controls-fold:not(.is-open){overflow:hidden}
+.ar-reading-tools{border:1px solid var(--border);border-radius:8px;font-size:12px;flex-shrink:0}
+.ar-reading-tools>summary{padding:8px 10px;cursor:pointer;font-weight:500;line-height:1.4}
+.ar-reading-tools-body{padding:8px;max-height:240px;overflow:auto;overscroll-behavior:contain}
+.ar-reading-tools .ar-reading-tracker{max-height:none;overflow:visible;padding:10px;gap:8px;display:grid;grid-template-columns:1fr}
+.ar-reading-tools .ar-reading-tracker>div{min-width:0}.ar-reading-tools .ar-reading-tracker>small{line-height:1.5}
+.ar-reading-tools .ar-reading-tracker label{display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.ar-reading-tools .ar-reading-tracker input[type=checkbox]{flex:none;margin-top:2px}
+.ar-reading-tools .ar-workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:6px;max-height:none;overflow:visible;align-items:stretch}
+.ar-reading-tools .ar-workflow-step,.ar-reading-tools .ar-workflow-node{display:flex;min-width:0;width:100%}
+.ar-reading-tools .ar-workflow-node{border-radius:8px}
+.ar-reading-tools .ar-workflow-node>button:first-child{flex:1;text-align:left;min-width:0}
+.ar-reading-tools .ar-workflow-node button{font-size:11px;padding:6px;min-height:30px}
+.ar-marker-key{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;margin:2px 0 8px;font-size:10px;line-height:1.4;flex-shrink:0}
+.ar-marker-key>span{white-space:nowrap}.ar-marker-key b{display:inline-grid;place-items:center;min-width:17px;border:1px solid currentColor;border-radius:4px;font-size:10px}
+.aug-reader .ar-document{padding:16px 52px 30px 16px!important}
+.aug-reader .ar-document .ar-page .ar-numbered-marker{display:inline-flex!important;align-items:center;justify-content:center;position:absolute;z-index:4;min-width:28px;width:28px;height:24px;min-height:24px;padding:2px;border-radius:5px;font:600 10px/1.2 var(--atlas-font-body);white-space:nowrap;box-shadow:none;overflow:visible}
+.aug-reader .ar-numbered-marker::after{display:none}
+.aug-reader .ar-numbered-marker:focus-visible,.aug-reader .ar-numbered-marker[aria-pressed=true]{outline:2px solid currentColor;outline-offset:2px}
+.aug-reader .ar-panel-dismiss{display:block;width:100%;min-height:30px;margin-bottom:8px;padding:6px 8px;text-align:right;border:1px solid var(--border);border-radius:7px;font-size:11px;background:var(--background);color:var(--foreground)}
+@container pdf-reader (max-width:1000px){
+ .aug-reader .ar-layout{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr);position:relative}
+ .aug-reader .ar-document{grid-column:1;grid-row:1}
+ .aug-reader .ar-layout:has(>.ar-inspector:not([hidden])),.aug-reader .ar-layout:has(>.ar-nav:not([hidden])){grid-template-rows:minmax(0,1fr) minmax(0,.65fr)}
+ .aug-reader .ar-layout>.ar-inspector,.aug-reader .ar-layout>.ar-nav{position:static;inset:auto;grid-column:1;grid-row:2;width:100%;max-width:100%;min-height:0;border-top:1px solid var(--border);box-shadow:none;overflow:auto;z-index:auto;box-sizing:border-box}
+ .aug-reader .ar-layout>.ar-resize{display:none}
+ .aug-reader .ar-inspector .ar-tabs{position:sticky;top:-10px}
+}
+.aug-reader :is(.ar-inspector,.ar-nav)[hidden]{display:none!important}
+@media(pointer:coarse){.aug-reader .ar-toolbar-organised [data-slot=button]{height:40px;min-height:40px}.ar-toolbar-organised .ar-page-controls input,.ar-toolbar-organised .ar-view-controls select{height:40px;min-height:40px}.aug-reader .ar-document .ar-page .ar-numbered-marker{width:32px;height:28px;min-height:28px}}
+.ar-toolbar-organised .ar-view-controls [role=combobox]{width:100%;max-width:100%;height:32px;min-height:32px;padding:5px 8px;font-size:12px;line-height:1.3;box-sizing:border-box}
+@media(pointer:coarse){.ar-toolbar-organised .ar-view-controls [role=combobox]{height:40px;min-height:40px}}
+.aug-reader .ar-controls-fold.is-open{display:block}
+.aug-reader .ar-controls-fold.is-open .ar-controls-inner{overflow:visible}
+.aug-reader .ar-numbered-marker{color:var(--foreground)!important;border-left-width:3px}
+.ar-marker-key>span{color:var(--muted-foreground)!important}
+.ar-marker-key b{color:var(--foreground)}
+.aug-reader{--pdf-control-size:32px}
+:root[data-control-size=comfortable] .aug-reader{--pdf-control-size:40px}
+.aug-reader .ar-toolbar-organised [data-slot=button],.ar-toolbar-organised .ar-page-controls input,.ar-toolbar-organised .ar-view-controls [role=combobox]{height:var(--pdf-control-size);min-height:var(--pdf-control-size)}
+.aug-reader .ar-tool-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;align-items:stretch}
+.aug-reader .ar-toolbar-organised .ar-tool-actions [data-slot=button]{width:100%;height:auto;min-height:var(--pdf-control-size);white-space:normal}
+.aug-reader .ar-tool-actions>a{grid-column:1/-1;justify-self:end;margin:0;padding-block:2px}
+@media(pointer:coarse){.aug-reader{--pdf-control-size:40px}}

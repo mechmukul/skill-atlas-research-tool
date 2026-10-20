@@ -30,3 +30,13 @@
 
 - Touch-emulation checks also passed with 40-pixel minimum targets and no horizontal overflow. The final cross-screen audit passed again with compact controls enabled.
 - Final clean skeleton: 109 tests passed, one optional upstream-fixture test skipped; zero failures. TypeScript checks also passed.
+
+## Expanded PDF controls and highlight markers — 20 October 2026
+
+- Expanded controls now use grouped page navigation, equal-height reading-mode/zoom fields and a separate tool row. Reading coverage and category filters are in a dedicated disclosure rather than filling the toolbar.
+- Numbered category/evidence markers remain visible beside the original page in embedded readers. Each marker is tied to an exact text anchor and opens its source passage; no marker is invented for page-only or unresolved analysis items.
+- Narrow-reader navigation and inspector panes sit below the PDF instead of covering it. Source-passage navigation scrolls inside the PDF, preserving the surrounding workspace position.
+- Browser checks passed for page and continuous modes at 1440, 1152, 768 and 390 pixels; mode/zoom fields aligned, marker selection worked with pointer and keyboard, and the highlight toggle hid/restored overlays. No page/PDF/control overflow or browser exceptions occurred.
+- The same Agile Research Framework paper supplied in the screenshot was checked in dark mode. Touch-emulation checks passed with 40-pixel mode/zoom fields and accessible progress controls.
+- All 110 automated tests passed; TypeScript and production compilation passed. Existing full-project lint limitations remain documented above.
+- README now explains the product, research workflow, centralised materials, source traceability, marker legend and the role of researcher judgement.

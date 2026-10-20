@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5076,
-      "sha256": "437dc41274019f9aa682d5b1578e3e6c37bc1084876bc2b751f12484c0c71423"
+      "bytes": 8154,
+      "sha256": "27e7f2ebf1a212dcf64d855385b4ecbb4e5f25ff144d55bfd3710e1557450407"
     },
     {
       "path": "Start Skill Atlas.command",
@@ -22,8 +22,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 3597,
-      "sha256": "0152085aece29d44f0b15f61dac1f996f16a0355b7028cec5b70c51d4285b842"
+      "bytes": 5066,
+      "sha256": "5b55b9ccc72e857c575430d2440e5b3b44e79daf40020f55de2ed950f88c3b1f"
     },
     {
       "path": "dashboard/.npmrc",
@@ -122,13 +122,13 @@
     },
     {
       "path": "dashboard/components/augmented-reader.css",
-      "bytes": 14044,
-      "sha256": "256cf01f429db2dd905eab4f7df0a172fabcb5c5183c7ab708d3ec605b63fbf2"
+      "bytes": 20721,
+      "sha256": "4be7e63fb8b19e70ab6a3dc2383cd9d7e17fb34b2bc1182e27d456a1cec04a41"
     },
     {
       "path": "dashboard/components/augmented-reader.tsx",
-      "bytes": 39040,
-      "sha256": "7e6cacea7407e494f87262df74443e4f8fd61dbd516f904b484b87b5de09f3fc"
+      "bytes": 40346,
+      "sha256": "9331a7beac790954560f67e53f63f11430ab1a4eabbf5207c21be3dc1f8a25c2"
     },
     {
       "path": "dashboard/components/author-map.tsx",
@@ -282,8 +282,8 @@
     },
     {
       "path": "dashboard/components/peek-paper.tsx",
-      "bytes": 4056,
-      "sha256": "1a10ed3a5143a572fd2073fa8b02c0b8b8051f343f379576c0331709963fdcda"
+      "bytes": 4193,
+      "sha256": "72b918464f69cd1feb49a6a523b958a6f22b4664c39ecc78be5af726c0272c78"
     },
     {
       "path": "dashboard/components/pointer-highlight.tsx",
@@ -302,8 +302,8 @@
     },
     {
       "path": "dashboard/components/reader-page-canvas.tsx",
-      "bytes": 3367,
-      "sha256": "a59bbcb0bbfcdd52ce76130063e93b010faf71796ee4c4130b9eb5d0a49aedf8"
+      "bytes": 3573,
+      "sha256": "54e057ab9959710a4cb2c14d381e2d4ef9ae2f21705621829c407229551a4afb"
     },
     {
       "path": "dashboard/components/reader-panel-toolbar.tsx",
@@ -772,8 +772,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 5076,
-      "sha256": "437dc41274019f9aa682d5b1578e3e6c37bc1084876bc2b751f12484c0c71423"
+      "bytes": 8154,
+      "sha256": "27e7f2ebf1a212dcf64d855385b4ecbb4e5f25ff144d55bfd3710e1557450407"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -787,8 +787,8 @@
     },
     {
       "path": "dashboard/desktop/VALIDATION.md",
-      "bytes": 3597,
-      "sha256": "0152085aece29d44f0b15f61dac1f996f16a0355b7028cec5b70c51d4285b842"
+      "bytes": 5066,
+      "sha256": "5b55b9ccc72e857c575430d2440e5b3b44e79daf40020f55de2ed950f88c3b1f"
     },
     {
       "path": "dashboard/drizzle/meta/_journal.json",
