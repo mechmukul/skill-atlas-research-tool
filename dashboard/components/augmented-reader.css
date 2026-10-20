@@ -12,3 +12,19 @@
 .ar-embedded{container-type:inline-size}.ar-embedded .ar-layout{position:relative}@container(max-width:700px){.ar-embedded .ar-layout{grid-template-columns:minmax(0,1fr)!important}.ar-embedded .ar-document{grid-column:1;grid-row:1;padding:22px 16px!important}.ar-embedded .ar-nav,.ar-embedded .ar-inspector{position:absolute;z-index:18;inset:0 auto 0 0;width:min(330px,100%);box-shadow:5px 0 20px #0003}.ar-embedded .ar-inspector{inset:0 0 0 auto;width:min(360px,100%)}.ar-embedded .ar-resize{display:none}.ar-embedded .ar-flag,.ar-embedded .ar-flag-leader{display:none}}
 
 .ar-controls-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--card);font-size:12px;cursor:pointer;text-align:left}.ar-controls-toggle:hover{background:var(--accent)}.ar-controls-toggle:focus-visible{outline:2px solid var(--primary);outline-offset:2px}.ar-controls-fold{display:grid;grid-template-rows:0fr;opacity:0;flex-shrink:0;transition:grid-template-rows 200ms ease,opacity 160ms ease}.ar-controls-fold.is-open{grid-template-rows:1fr;opacity:1}.ar-controls-inner{min-height:0;overflow:hidden}.ar-controls-fold:not(.is-open){visibility:hidden}.ar-controls-fold.is-open .ar-controls-inner{padding-top:8px}.ar-embedded .ar-layout{min-height:0}.ar-embedded .ar-source-search{padding:4px 0}@media(prefers-reduced-motion:reduce){.ar-controls-fold{transition:none}}
+
+/* A 100% page always fits its container; only deliberate zoom may overflow. */
+.aug-reader .ar-source{max-width:none!important;width:100%;height:auto;display:block}
+.aug-reader .ar-page{min-width:0;box-sizing:border-box}
+.ar-embedded .ar-document .ar-page,.ar-embedded .ar-document .ar-continuous{margin-inline:auto}
+.ar-embedded .ar-source-search{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;margin:0 0 12px;padding:0}
+.ar-embedded .ar-source-search input{width:100%;min-width:0;min-height:36px}
+.ar-embedded .ar-toolbar{align-items:center;gap:8px}
+.ar-embedded .ar-toolbar label{flex-wrap:wrap;min-width:0}
+.ar-embedded .ar-document{scrollbar-gutter:stable both-edges;padding:16px!important}
+.ar-embedded .ar-scroll-page{margin-bottom:24px}
+.ar-embedded .ar-controls-toggle{min-height:40px;padding:10px 12px;line-height:1.4}
+.ar-embedded .ar-layout>.ar-nav,.ar-embedded .ar-layout>.ar-inspector{max-width:100%;box-sizing:border-box}
+@container (max-width:400px){.ar-source-search{grid-template-columns:1fr!important;gap:6px!important}}
+/* Transparent selection glyphs must not enlarge the page's scrollable area. */
+.aug-reader .ar-text-layer,.aug-reader .ar-overlays{overflow:clip}

@@ -1,3 +1,4 @@
+import {DisplayPreferences} from '@/components/display-preferences';
 import {TopicProvider} from '@/components/topic-provider';
 import type { Metadata } from "next";
 import "./globals.css";
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased"><AtlasTheme><TopicProvider>{children}</TopicProvider></AtlasTheme></body>
+      <body className="antialiased"><AtlasTheme><DisplayPreferences><TopicProvider>{children}</TopicProvider></DisplayPreferences></AtlasTheme></body>
     </html>
   );
 }

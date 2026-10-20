@@ -21,10 +21,10 @@ export function AtlasWelcome({onEnter,onRun}:{onEnter:()=>void;onRun:(id:string)
       <div className="atlas-press-stage">{['sheet','roll','sheet','roll','sheet','roll','sheet','sheet','sheet','sheet','sheet','roll'].map((type,i)=><div className={type} key={i}/>)}</div>
     </div>
     <div className="welcome-shade" aria-hidden="true"/>
-    <header className="welcome-brand"><Layers3 size={26}/><span>Skill Atlas</span></header>
-    <div className="welcome-theme"><ThemeToggle/></div><Button className="welcome-motion" variant="outline" onClick={()=>setPaused(p=>!p)} aria-pressed={paused}>{paused?<Play size={16}/>:<Pause size={16}/>} {paused?'Play animation':'Pause animation'}</Button>
+    <div className="welcome-topbar"><header className="welcome-brand"><Layers3 size={26}/><span>Skill Atlas</span></header>
+    <div className="welcome-actions"><div className="welcome-theme"><ThemeToggle/></div><Button className="welcome-motion" variant="outline" onClick={()=>setPaused(p=>!p)} aria-pressed={paused}>{paused?<Play size={16}/>:<Pause size={16}/>} {paused?'Play animation':'Pause animation'}</Button></div></div>
 
-    <section className="welcome-copy"><div className="welcome-analysis" onWheel={e=>e.stopPropagation()} onTouchStart={e=>e.stopPropagation()} onTouchEnd={e=>e.stopPropagation()} onKeyDown={e=>{if(['ArrowUp','PageDown'].includes(e.key))e.stopPropagation();}}><AnalysisStatus compact onRun={onRun}/></div><p className="welcome-kicker">YOUR RESEARCH WORKSPACE</p><h1>Skill Atlas</h1><p>Papers. Evidence. Your ideas.</p></section>
-    <div className="welcome-entry"><Button autoFocus onClick={enter} disabled={leaving}><ArrowUp size={20}/>Enter Skill Atlas</Button><p>Swipe up or scroll to enter</p><small>Created by Mukul Mech · PhD security researcher</small></div>
+    <div className="welcome-main"><section className="welcome-copy"><div className="welcome-analysis" onWheel={e=>e.stopPropagation()} onTouchStart={e=>e.stopPropagation()} onTouchEnd={e=>e.stopPropagation()} onKeyDown={e=>{if(['ArrowUp','PageDown'].includes(e.key))e.stopPropagation();}}><AnalysisStatus compact onRun={onRun}/></div><p className="welcome-kicker">YOUR RESEARCH WORKSPACE</p><h1>Skill Atlas</h1><p>Papers. Evidence. Your ideas.</p></section>
+    <div className="welcome-entry"><Button onClick={enter} disabled={leaving}><ArrowUp size={20}/>Enter Skill Atlas</Button><p>Swipe up or scroll to enter</p><small>Created by Mukul Mech · PhD security researcher</small></div></div>
   </main>;
 }

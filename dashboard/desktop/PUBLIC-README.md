@@ -38,6 +38,10 @@ PDF extraction and source previews require Python 3 with the packages in `dashbo
 
 Researcher review, full reading, AI analysis and source verification are separate states. The app does not certify findings or automate acceptance decisions. The generic workspace supports arbitrary research questions and writing sections. Additional advanced legacy SLR tools remain in the code as an optional study-specific template; they are not prefilled research for a new user.
 
+## Reading layout
+
+Click the reading-and-evidence heading to expand or collapse its metrics. Each topic remembers the widget state. Compact controls are the default; select Comfortable in Workspace settings → Control size or in the reader’s More menu. Text size is unchanged. Reader navigation, resize and close actions stay in a short toolbar; More contains secondary actions. Touch devices retain larger control targets.
+
 ## Storage and checks
 
 The first topic uses `dashboard/.local/` and `research/`. Additional topics use isolated directories under `dashboard/.local/topics/`. Back these up along with any externally registered project folders. Save work before switching topics. Browser recovery drafts are scoped per topic; saved data is authoritative, and stale saves are rejected.

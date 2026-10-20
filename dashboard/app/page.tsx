@@ -1,9 +1,11 @@
 "use client";
+import {observeResize} from '@/lib/observe-resize';
 import {EvidenceLandscape} from '@/components/evidence-landscape';
 import {ResearchTimeline} from '@/components/research-timeline';
 import {ResearchTitleBackground} from '@/components/research-title-background';
 import {BentoGrid,BentoCard} from '@/components/magicui/bento-grid';
 import {AtlasSearch} from '@/components/atlas-search';
+import {ControlSizeSettings} from '@/components/display-preferences';
 import {GeneralWorkspace} from '@/components/general-workspace';
 import {TopicManager,ProfileForm,useTopics} from '@/components/topic-provider';
 import {WorkspaceIdentity} from '@/components/workspace-identity';
@@ -66,6 +68,7 @@ function ActivityLog({events}:{events:Activity[]}) {
 }
 export default function Home() {
   const topicContext=useTopics();const activeTopic=topicContext?.registry.topics.find(t=>t.id===topicContext.registry.current);const general=activeTopic?.template==='general';
+  useEffect(()=>{const header=document.querySelector<HTMLElement>('.topbar');if(!header)return;const measure=()=>document.documentElement.style.setProperty('--atlas-header-height',Math.max(0,Math.ceil(header.getBoundingClientRect().height))+'px');const stop=observeResize(header,measure,{box:'border-box'});measure();return()=>{stop();document.documentElement.style.removeProperty('--atlas-header-height');};},[]);
   const [welcome,setWelcome]=useState(true);
   useEffect(()=>{queueMicrotask(()=>{if(new URLSearchParams(window.location.search).has('topic'))setWelcome(false);});},[]);
   const [exploreNavigation,setExploreNavigation]=useState(false);
@@ -113,7 +116,7 @@ export default function Home() {
     {view==='timeline'&&<ResearchTimeline runs={runs} onPaper={id=>{window.history.replaceState(null,'','#papers/'+id);setView('papers');}}/>}
     {view!=='landscape'&&view!=='timeline'&&view!=='synthesis'&&<PageGuide key={view} page={view}/>}
     {settingsView&&view!=='settings'&&<Button className="settings-back" variant="ghost" onClick={()=>navigateTo('settings')}>← Workspace settings</Button>}
-    {view==='settings'&&<><div className="page-heading"><div><div className="eyebrow">MY WORKSPACE</div><h1>Workspace settings</h1><p>Manage your skills, collections, files and connection.</p></div></div><TopicManager expanded/><section className="glass-panel"><h2>Researcher profile</h2><ProfileForm/></section><ThemeSettings/><BentoGrid className="workspace-settings-grid">{settingsNav.map(n=><BentoCard key={n.id} name={n.name} Icon={n.icon} description={n.description} href={"#"+n.id} cta={"Open "+n.name.toLowerCase()}/>)}</BentoGrid></>}
+    {view==='settings'&&<><div className="page-heading"><div><div className="eyebrow">MY WORKSPACE</div><h1>Workspace settings</h1><p>Manage your skills, collections, files and connection.</p></div></div><TopicManager expanded/><section className="glass-panel"><h2>Researcher profile</h2><ProfileForm/></section><ThemeSettings/><ControlSizeSettings/><BentoGrid className="workspace-settings-grid">{settingsNav.map(n=><BentoCard key={n.id} name={n.name} Icon={n.icon} description={n.description} href={"#"+n.id} cta={"Open "+n.name.toLowerCase()}/>)}</BentoGrid></>}
     {(view==='library'||view==='favorites')&&<SkillLibrary catalog={catalog} selected={selected} favorites={favorites} savedOnly={view==='favorites'} onToggle={toggle} onSave={saveSkill} onDetail={setDetail} onImport={()=>showImport()} onWorkbench={()=>setWorkbenchOpen(true)} runCount={runs.filter(r=>r.status==='completed').length}/>}
     <IntegrationAssistant page={view} catalog={catalog} onCatalog={setCatalog} onPrepare={(skills,text)=>{setSelected(skills.map(s=>s.id));setPrompt(text);setWorkbenchOpen(true);}}/><WorkflowSessionBar page={view} onNavigate={navigateTo}/>{view==='paper-search'&&<PaperSearch onRun={id=>{openRun(id);setView('run');}} onPaper={id=>{window.history.replaceState(null,'','#papers/'+id);setView('papers');}}/>}
     {!welcome&&['research-map','papers','knowledge-base','paper-search','claim-matrix','screening','connections'].includes(view)&&<AnalysisStatus onRun={id=>{openRun(id);setView('run');refresh();}}/>}

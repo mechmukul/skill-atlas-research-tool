@@ -9,3 +9,24 @@
 - Package manifest hashes checked. No research databases, papers, research folders, credentials, machine-specific integration/paper mappings, or absolute private machine paths were packaged.
 - Skeleton checks reused installed dependencies through a temporary ignored symlink, removed before Git staging. A fresh network-only dependency installation was not repeated.
 - AI service tests use mock Codex; no new paid paper-analysis jobs were run for validation.
+
+## Layout refinement — 20 October 2026
+
+- Reading/evidence metric tiles use equal columns and aligned label, value, bar and count rows; narrow layouts stack without horizontal overflow.
+- Welcome layout checked at 1440, 1280, 1024, 768 and 390 CSS pixels in both light and dark themes.
+- Reader docking, fit-width PDF rendering and in-flow strand toolbar checked at five widths in both themes.
+- Twelve main application screens checked at 1440, 768 and 390 pixels with zero page-level horizontal overflow or browser exceptions.
+- Statement actions, metadata layout and collapsed-header docking checked at a 1152-pixel viewport with 1.25 device scale, equivalent to 125% browser zoom on a 1440-pixel display.
+- All 109 regression tests, TypeScript checks and production compilation passed. The existing full-project lint limitations above still apply.
+- Layout checks were read-only: no papers, saved notes, screening decisions or verification results were changed.
+
+## Collapsible progress and compact controls — 20 October 2026
+
+- Reading/evidence widgets collapse to a summary, support keyboard activation, and remember open/closed state per topic and placement.
+- Compact and Comfortable control sizes persist as a browser appearance preference; source and evidence text size is unchanged.
+- Reader navigation, collapse/expand and close controls use a short toolbar. Secondary actions and the size switch are in More; Escape and outside clicks dismiss the menu.
+- Browser checks passed for persisted widget state, control-size persistence, More/Escape, reader collapse/reopen, and PDF rendering at 1440, 1152, 768 and 390 pixels in both themes with zero page/PDF horizontal overflow.
+- Resize measurements are scheduled outside observer delivery; a regression test covers coalescing and cancellation. All 110 automated tests, TypeScript checks, focused lint for new functionality, and production compilation passed.
+
+- Touch-emulation checks also passed with 40-pixel minimum targets and no horizontal overflow. The final cross-screen audit passed again with compact controls enabled.
+- Final clean skeleton: 109 tests passed, one optional upstream-fixture test skipped; zero failures. TypeScript checks also passed.

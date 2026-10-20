@@ -417,3 +417,100 @@ body:has(.atlas-welcome) .atlas-skills-floater{display:none}
 @media(prefers-reduced-transparency:reduce){.glass-panel,.evidence-progress,.atlas-topic-switch,.atlas-onboarding{background:var(--card);backdrop-filter:none;-webkit-backdrop-filter:none}}
 @media(max-width:800px){.atlas-topic-switch{flex-wrap:wrap}.atlas-topic-switch select{max-width:160px}.evidence-progress-metrics{gap:6px}.evidence-progress-metrics>div{padding:8px}.atlas-onboarding{padding:12px}}
 .general-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.general-steps button{display:grid;gap:10px;text-align:left;padding:20px;border:1px solid var(--border);border-radius:16px;background:color-mix(in srgb,var(--background) 65%,transparent)}.general-steps span{font-size:13px;color:var(--muted-foreground)}.general-columns{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,2fr);gap:20px}.general-field{display:grid;gap:8px;font-size:13px;font-weight:600;margin-bottom:16px}.general-field textarea,.general-field select,.general-source textarea{width:100%;padding:12px;border-radius:12px;background:var(--background);border:1px solid var(--border);color:var(--foreground)}.general-field textarea{min-height:85px}.general-field .general-draft{min-height:360px;line-height:1.8;font-weight:400}.general-source{padding:18px 0;border-top:1px solid var(--border)}.general-source small{display:block;margin:8px 0;color:var(--muted-foreground)}.general-source p{font-size:13px;line-height:1.65}@media(max-width:900px){.general-columns,.general-steps{grid-template-columns:1fr}}
+
+/* Alignment system: welcome, metrics, navigation and workspace controls. */
+:root{--atlas-space:8px;--atlas-control-height:40px}
+.atlas-welcome{display:flex;flex-direction:column;overflow-y:auto;touch-action:pan-y;padding:clamp(20px,3vw,36px) clamp(20px,4vw,64px);gap:24px}
+.welcome-topbar{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;flex:none;width:100%;max-width:1600px;margin-inline:auto}
+.atlas-welcome .welcome-brand,.atlas-welcome .welcome-theme,.atlas-welcome .welcome-motion{position:static;inset:auto;margin:0}
+.atlas-welcome .welcome-brand{display:flex;align-items:center;gap:12px;line-height:1.2;min-width:0}
+.welcome-brand svg{flex:none;width:26px;height:26px}
+.welcome-actions{display:flex;align-items:center;gap:12px;flex:none}
+.welcome-actions .welcome-motion{min-height:40px;display:inline-flex;align-items:center;gap:8px}
+.welcome-main{position:relative;z-index:2;display:flex;flex:1;min-height:min-content;flex-direction:column;align-items:center;justify-content:center;width:100%;gap:clamp(24px,5vh,56px);padding-block:20px}
+.atlas-welcome .welcome-copy{position:static;inset:auto;width:100%;max-width:760px;display:flex;flex-direction:column;align-items:center;padding:0;gap:12px}
+.welcome-copy .welcome-analysis{position:static;inset:auto;transform:none;width:min(100%,640px);max-width:none;margin:0 0 clamp(12px,3vh,28px)}
+.welcome-analysis .evidence-progress-compact{width:100%;max-width:none;margin:0}
+.welcome-copy .welcome-kicker{margin:0;line-height:1.5}
+.welcome-copy h1{font-size:clamp(48px,7vw,88px);line-height:1.05;margin:0}
+.welcome-copy>p:last-child{margin:0;line-height:1.5}
+.atlas-welcome .welcome-entry{position:static;inset:auto;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.welcome-entry p,.welcome-entry small{margin:0;line-height:1.5;text-align:center}
+.welcome-entry small{margin-top:4px}
+.evidence-progress{container-type:inline-size;min-width:0}
+.evidence-progress-metrics{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:12px}
+.evidence-progress-metrics>.evidence-progress-tile{display:grid;grid-template-rows:minmax(32px,auto) auto 8px auto;align-content:start;gap:8px;padding:14px;min-width:0}
+.evidence-progress-tile .evidence-progress-label{font-size:12px;line-height:1.4;overflow-wrap:anywhere;align-self:start}
+.evidence-progress-tile .evidence-progress-value{font-size:clamp(24px,3vw,32px);font-weight:650;line-height:1.1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.evidence-progress-tile progress{display:block;width:100%;height:8px;min-width:0;align-self:center;margin:0}
+.evidence-progress-tile .evidence-progress-count{font-size:12px;line-height:1.4;font-variant-numeric:tabular-nums;white-space:nowrap;margin:0}
+@container (max-width:420px){.evidence-progress-metrics{grid-template-columns:1fr}.evidence-progress-metrics>.evidence-progress-tile{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 8px auto;padding:12px;column-gap:16px;row-gap:8px}.evidence-progress-tile .evidence-progress-label{align-self:center}.evidence-progress-tile .evidence-progress-value{grid-column:2;grid-row:1;font-size:26px}.evidence-progress-tile progress,.evidence-progress-tile .evidence-progress-count{grid-column:1/-1}}
+.topbar:not(.is-compact){max-height:none;align-items:center;gap:12px 20px}
+.topbar .breadcrumb{flex:1 1 200px;align-items:center;line-height:1.4}
+.topbar-actions{justify-content:flex-end;gap:8px;max-width:100%;flex:0 1 auto}
+.topbar-actions>button,.topbar-actions>details>summary{min-height:var(--atlas-control-height);display:inline-flex;align-items:center}
+.topbar-actions .theme-toggle{width:40px;height:40px;flex:none}
+.topbar .atlas-topic-switch{min-height:40px;gap:8px;border-radius:16px;flex-wrap:wrap}
+.atlas-topic-switch select{height:32px;min-width:120px;width:auto;flex:1}
+.atlas-topic-switch button{min-height:32px}
+.topbar .atlas-topic-switch label{line-height:1.3}
+.header-evidence-progress>div{width:min(600px,calc(100vw - 32px));max-width:calc(100vw - 32px)}
+.page-heading,.run-heading,.rm-heading,.slr-heading{align-items:flex-start;flex-wrap:wrap}
+.page-heading>div,.run-heading>div,.rm-heading>div,.slr-heading>div{min-width:0}
+.page-heading h1,.rm-heading h1,.slr-heading h1{line-height:1.2;overflow-wrap:anywhere}
+.button-row,.slr-row{align-items:center;gap:8px 12px}
+.button-row>button,.slr-row>button{min-height:40px;height:auto;padding-block:9px;white-space:normal;line-height:1.35;justify-content:center}
+.button-row>button svg,.slr-row>button svg,[data-slot=sidebar-menu-button]>svg{flex-shrink:0}
+.brand-mark{width:36px;height:36px;flex:none;display:grid;place-items:center}
+.brand-mark svg{width:22px;height:22px}
+.atlas-editorial-sidebar [data-slot=sidebar-menu-button]{align-items:center;min-height:40px;line-height:1.35}
+.atlas-editorial-sidebar [data-slot=sidebar-menu-button]>svg{width:20px;height:20px}
+.atlas-editorial-sidebar .brand{align-items:center;gap:12px}
+.workspace-owner{align-items:center}
+.workspace-owner>div{min-width:0;overflow-wrap:anywhere}
+.atlas-bento-grid{align-items:stretch}
+.atlas-bento-card{min-width:0}
+.atlas-bento-card h3,.atlas-bento-card p,.paper-bento-box h3{overflow-wrap:anywhere}
+.ps-form{grid-template-columns:minmax(180px,2fr) repeat(2,minmax(140px,1fr)) auto auto}
+.ps-reader-controls{flex-wrap:wrap;align-items:end}
+.ps-reader-controls>*{min-width:0}
+.ps-reader-heading>h2{min-width:0;overflow-wrap:anywhere}
+.page-content input:not([type=checkbox]):not([type=radio]),.page-content select,.page-content textarea{max-width:100%;box-sizing:border-box}
+@media(max-width:1100px){.ps-form{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-form>.search-field{grid-column:1/-1}.topbar .breadcrumb{flex-basis:100%}.topbar-actions{justify-content:flex-start;width:100%}}
+@media(max-width:640px){.atlas-welcome{padding:20px 16px;gap:12px}.welcome-topbar{gap:12px;align-items:center}.atlas-welcome .welcome-brand{font-size:16px;gap:8px}.welcome-brand svg{width:22px;height:22px}.welcome-actions{gap:8px}.welcome-actions .welcome-motion{font-size:12px;padding-inline:10px}.welcome-main{justify-content:flex-start;padding-top:12px;gap:24px}.welcome-copy .welcome-analysis{margin-bottom:8px}.welcome-copy h1{font-size:52px}.welcome-entry small{font-size:11px}.welcome-entry{padding-bottom:8px}.ps-form{grid-template-columns:1fr}.topbar .atlas-topics{width:100%}.topbar .atlas-topic-switch{width:100%}.topbar .atlas-topic-switch select{max-width:none}.topbar-actions{gap:6px}.header-evidence-progress>div{position:fixed;left:16px;right:16px;top:var(--atlas-header-height,120px);width:auto}.page-heading,.slr-heading{gap:12px}}
+@media(max-height:650px) and (min-width:641px){.atlas-welcome{padding-block:16px;gap:12px}.welcome-main{gap:20px;padding-block:0}.welcome-copy .welcome-analysis{margin-bottom:0}.welcome-copy h1{font-size:52px}.welcome-copy{gap:8px}.welcome-entry p{font-size:12px}.welcome-entry small{display:block}}
+.workspace-settings-grid.atlas-bento-grid>:first-child{grid-column:auto}
+.atlas-bento-navigation .bento-content{height:100%;width:100%;align-items:flex-start}
+.atlas-bento-navigation .bento-content>a{margin-top:auto;display:inline-flex;align-items:center;gap:8px}
+.topbar .header-evidence-progress>summary::before{content:'▸';font-size:11px;margin-right:6px}
+.topbar .header-evidence-progress[open]>summary::before{content:'▾'}
+
+/* Reading progress is a disclosure: summaries stay small, details remain available. */
+details.evidence-progress.evidence-progress{padding:0;overflow:visible}
+.evidence-progress>.evidence-progress-toggle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:12px 16px;list-style:none;cursor:pointer;border-radius:inherit;line-height:1.4}
+.evidence-progress-toggle::-webkit-details-marker{display:none}
+.evidence-progress-heading{display:flex;align-items:center;gap:8px;min-width:0;font-size:13px}
+.evidence-progress-heading>svg{flex:none;transform:rotate(-90deg)}
+.evidence-progress[open] .evidence-progress-heading>svg{transform:rotate(0)}
+.evidence-summary-values{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11px;font-variant-numeric:tabular-nums}
+.evidence-summary-values>span{white-space:nowrap}.evidence-summary-values>span>span{color:var(--muted-foreground)}
+.evidence-toggle-hint{font-size:11px;color:var(--muted-foreground);margin-left:auto;white-space:nowrap}
+.evidence-progress[open] .evidence-summary-values{display:none}
+.evidence-progress-body{padding:0 16px 16px}
+.evidence-progress-body>p{margin-bottom:0}
+.evidence-progress-toggle:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+.welcome-copy .welcome-analysis{margin-bottom:12px}
+.control-size-switch{display:inline-flex;gap:3px;max-width:100%;padding:3px;border:1px solid var(--border);border-radius:10px;background:var(--background)}
+.control-size-switch>button{font:inherit;font-size:12px;line-height:1.3;min-height:30px;padding:5px 10px;border-radius:7px;color:var(--foreground);white-space:nowrap;cursor:pointer}
+.control-size-switch>button[aria-pressed=true]{background:var(--primary);color:var(--primary-foreground)}
+.control-size-switch>button:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+:root[data-control-size=compact] :is(.topbar,.page-content) [data-slot=button]:not([data-size*=icon]):not(.theme-toggle){min-height:30px;height:auto;padding:5px 10px;font-size:12px;line-height:1.35;border-radius:10px}
+:root[data-control-size=compact] .topbar-actions>button:not(.theme-toggle),:root[data-control-size=compact] .topbar-actions>details>summary{min-height:32px}
+:root[data-control-size=compact] .topbar .atlas-topic-switch{min-height:34px;padding:3px 8px}
+:root[data-control-size=compact] .topbar .atlas-topic-switch select{height:28px}
+:root[data-control-size=compact] .slr-root .slr-evidence>.slr-evidence-actions{grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr));gap:6px}
+:root[data-control-size=compact] .slr-root .slr-evidence>.slr-evidence-actions>button{min-height:30px;padding:5px 8px;font-size:12px;border-radius:9px}
+:root[data-control-size=compact] .slr-root .atlas-reading-nav>button{min-height:36px;padding:5px 9px;font-size:12px}
+:root[data-control-size=compact] .slr-tabs button{padding:6px 10px;font-size:12px}
+@media(pointer:coarse){:root[data-control-size] :is(.page-content,.topbar) [data-slot=button],:root[data-control-size] .slr-root .slr-evidence>.slr-evidence-actions>button{min-height:40px}.control-size-switch>button{min-height:40px}}
+@container (max-width:420px){.evidence-progress>.evidence-progress-toggle{padding:10px 12px;gap:8px}.evidence-summary-values{width:100%;justify-content:space-between;gap:5px}.evidence-toggle-hint{display:none}.evidence-progress-body{padding:0 12px 12px}}

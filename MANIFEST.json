@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4648,
-      "sha256": "66552d2d2719d69b0141b08fbb07daa099908e99adeb8bed5b0278b8fd8e2e10"
+      "bytes": 5076,
+      "sha256": "437dc41274019f9aa682d5b1578e3e6c37bc1084876bc2b751f12484c0c71423"
     },
     {
       "path": "Start Skill Atlas.command",
@@ -22,8 +22,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1372,
-      "sha256": "cfde62aff95e894342071ebc614f6e49285dfa4a12d86f8ad876afc859689da4"
+      "bytes": 3597,
+      "sha256": "0152085aece29d44f0b15f61dac1f996f16a0355b7028cec5b70c51d4285b842"
     },
     {
       "path": "dashboard/.npmrc",
@@ -37,18 +37,18 @@
     },
     {
       "path": "dashboard/app/globals.css",
-      "bytes": 185900,
-      "sha256": "011f2678013293abc45d458405f25cb9029e046ccde7870f1bc26ad7da83dd8d"
+      "bytes": 196732,
+      "sha256": "d3047d809296f196fe4bb938c58171fdc3d95c862521b30fbec3f215d5e20cd9"
     },
     {
       "path": "dashboard/app/layout.tsx",
-      "bytes": 747,
-      "sha256": "a1ccb4941e519fd874d0e4eacd76f03a23925566f77855c336dae425b5df8752"
+      "bytes": 857,
+      "sha256": "94be59dafac9c44ab23fce5f74c1b502fc229dc36d5e2c385209e1c855a1dd58"
     },
     {
       "path": "dashboard/app/page.tsx",
-      "bytes": 37316,
-      "sha256": "2202739f94d91753a33c11e2147c6a6acebf1a0e003033e686497a0f7906174c"
+      "bytes": 37875,
+      "sha256": "e90d776ece1f6ca0eca1312ecb64a5d9e5d58bd6b0820826c2ccc67489e391d1"
     },
     {
       "path": "dashboard/build/sites-vite-plugin.LICENSE",
@@ -117,18 +117,18 @@
     },
     {
       "path": "dashboard/components/atlas-welcome.tsx",
-      "bytes": 2758,
-      "sha256": "fbb2f9cfe858abd420b10ded487dd5a21fb10d3c5d46c1c1b746b81c85209ced"
+      "bytes": 2861,
+      "sha256": "f2c30095f30aadc31264b44aac8d89e2697ed526cb5a5fce17745547bb186028"
     },
     {
       "path": "dashboard/components/augmented-reader.css",
-      "bytes": 12820,
-      "sha256": "2922f7f7e93ac4810b612c78704176318fb4bf093192f1caefda8e02efe9177d"
+      "bytes": 14044,
+      "sha256": "256cf01f429db2dd905eab4f7df0a172fabcb5c5183c7ab708d3ec605b63fbf2"
     },
     {
       "path": "dashboard/components/augmented-reader.tsx",
-      "bytes": 39000,
-      "sha256": "1821d28b00cc7f8e25930eeb4cee9cb42554a7062330cc1738e56ff2793f0ed9"
+      "bytes": 39040,
+      "sha256": "7e6cacea7407e494f87262df74443e4f8fd61dbd516f904b484b87b5de09f3fc"
     },
     {
       "path": "dashboard/components/author-map.tsx",
@@ -166,6 +166,11 @@
       "sha256": "baa4f1fb9e746724b7127f7c47176a0f36cca46a9bed846567856d85a6ee82d1"
     },
     {
+      "path": "dashboard/components/display-preferences.tsx",
+      "bytes": 1454,
+      "sha256": "934f88110677811ac7b2923f157e89b4d3f425f23fe655871cb126fa589c44ae"
+    },
+    {
       "path": "dashboard/components/evidence-landscape.css",
       "bytes": 5345,
       "sha256": "0c127d26c9847f1c0c0961f421622056b7245ee3fc16a325d8dcc3f837ff4293"
@@ -177,8 +182,8 @@
     },
     {
       "path": "dashboard/components/evidence-progress.tsx",
-      "bytes": 3770,
-      "sha256": "490ebc225e1df6fda594de0424835ab7b18b5e31970653f942365bdf21b86ed6"
+      "bytes": 5064,
+      "sha256": "ca16f2d83cc7a0f940fcd4ada7e6c901d1b4d3312db589618d43f0f397344c67"
     },
     {
       "path": "dashboard/components/evidence-trace.tsx",
@@ -277,8 +282,8 @@
     },
     {
       "path": "dashboard/components/peek-paper.tsx",
-      "bytes": 4010,
-      "sha256": "07623945c2cc36b1f1bf3f47ce56c6577cb7d7057ae15bc546478ecd8ef21c7d"
+      "bytes": 4056,
+      "sha256": "1a10ed3a5143a572fd2073fa8b02c0b8b8051f343f379576c0331709963fdcda"
     },
     {
       "path": "dashboard/components/pointer-highlight.tsx",
@@ -297,8 +302,13 @@
     },
     {
       "path": "dashboard/components/reader-page-canvas.tsx",
-      "bytes": 3378,
-      "sha256": "9d836dad8491a988ac6815e709ac67e04f9a0e2dcff4c27b1a392696ef9b4163"
+      "bytes": 3367,
+      "sha256": "a59bbcb0bbfcdd52ce76130063e93b010faf71796ee4c4130b9eb5d0a49aedf8"
+    },
+    {
+      "path": "dashboard/components/reader-panel-toolbar.tsx",
+      "bytes": 2846,
+      "sha256": "2b485fafe9ee04896110603b9145bcf59128b9189ec0661669b5f23c750902fb"
     },
     {
       "path": "dashboard/components/reading-links.tsx",
@@ -387,13 +397,13 @@
     },
     {
       "path": "dashboard/components/slr-workspace.css",
-      "bytes": 18216,
-      "sha256": "b93904ebfcb1520f4519340a800529571d1fec2726648f68ceb666c6a70434db"
+      "bytes": 24374,
+      "sha256": "00d5ecea5562dc39884ed54c001c78fc9d47d8ca9206645de48911d4a0fea185"
     },
     {
       "path": "dashboard/components/slr-workspace.tsx",
-      "bytes": 59311,
-      "sha256": "7bf4ca287d54cfae4a53aae0f65aef6d4e5073606e7d671e1c52e178118a2989"
+      "bytes": 58926,
+      "sha256": "957bfea3200f0aae557ab49ab2c6122b6bf78932920cbcb95dc627ce79effd91"
     },
     {
       "path": "dashboard/components/source-import.tsx",
@@ -762,8 +772,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 4648,
-      "sha256": "66552d2d2719d69b0141b08fbb07daa099908e99adeb8bed5b0278b8fd8e2e10"
+      "bytes": 5076,
+      "sha256": "437dc41274019f9aa682d5b1578e3e6c37bc1084876bc2b751f12484c0c71423"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -777,8 +787,8 @@
     },
     {
       "path": "dashboard/desktop/VALIDATION.md",
-      "bytes": 1372,
-      "sha256": "cfde62aff95e894342071ebc614f6e49285dfa4a12d86f8ad876afc859689da4"
+      "bytes": 3597,
+      "sha256": "0152085aece29d44f0b15f61dac1f996f16a0355b7028cec5b70c51d4285b842"
     },
     {
       "path": "dashboard/drizzle/meta/_journal.json",
@@ -849,6 +859,11 @@
       "path": "dashboard/lib/load-evidence.ts",
       "bytes": 1681,
       "sha256": "6eb8a52b552c1fab4fe8aaa5cb16c455d1c41a96d598629b4e400c7bd12ec8c8"
+    },
+    {
+      "path": "dashboard/lib/observe-resize.ts",
+      "bytes": 464,
+      "sha256": "a93635147c3f968d5cb9bddc2aefe3e1553f8671b30805426e26d9c3cd82606f"
     },
     {
       "path": "dashboard/lib/page-workflow.ts",
@@ -1224,6 +1239,11 @@
       "path": "dashboard/tests/knowledge.test.mjs",
       "bytes": 3538,
       "sha256": "31f1eafad47ecae10059a1dc3de4a88cb35b383acf70fd06337b2b127068ba23"
+    },
+    {
+      "path": "dashboard/tests/observe-resize.test.mjs",
+      "bytes": 1304,
+      "sha256": "4b053c7c5f00cc04af90bcde9ad4a475f95f3d6c6fb1dec5df97abb1d050b4b2"
     },
     {
       "path": "dashboard/tests/page-workflow.test.mjs",
