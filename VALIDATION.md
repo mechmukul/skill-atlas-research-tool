@@ -46,3 +46,10 @@
 - Current production UI retained; exploratory layouts excluded from the release.
 - Security review: 29 coverage units, zero confirmed vulnerabilities and seven conditional needs-validation records; candidate and final source-record reviews performed separately. Findings and coverage schema validators passed. Runtime tests were not executed under this audit. See docs/security-review-2026-10-21.md for clean-package applicability.
 - This release changes documentation, version/packaging metadata and manifest hashes. Historical application tests above are not represented as freshly rerun. No new signed/notarised binary or fresh network dependency install is claimed.
+
+## First-install documentation captures — 21 October 2026
+
+- Disposable copy of the v1.0.0 source used separate empty registry/database/research paths and local ports. Production research and UI source were untouched.
+- Actual onboarding, welcome, blank topic workspace, empty paper review/library and import form captured. Later screens use fictional profile/topic details; zero PDFs, zero AI drafts and zero reviewed papers confirmed. Codex was deliberately unavailable in the capture instance; no account connection or analysis was run.
+- Existing local dependencies reused; no fresh network installation or native binary build is claimed. These are documentation/functional walkthrough checks, not new security exploit validation.
+- Documentation includes a five-step SVG, accessible prose equivalent, actual screenshots and explicit separation of populated examples from fresh-install state.

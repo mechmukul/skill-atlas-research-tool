@@ -15,7 +15,7 @@ fs.writeFileSync(path.join(app,'public/atlas-integrations.json'),JSON.stringify(
 for(const name of ['Start Skill Atlas.command','Stop Skill Atlas.command']){fs.copyFileSync(path.join(workspace,name),path.join(destination,name));fs.chmodSync(path.join(destination,name),0o755);}
 const screenshots=path.join(workspace,'docs/screenshots');
 if(fs.existsSync(screenshots))fs.cpSync(screenshots,path.join(destination,'docs/screenshots'),{recursive:true,filter:source=>path.basename(source)!=='.DS_Store'});
-for(const name of ['SECURITY.md','CHANGELOG.md','docs/security-review-2026-10-21.md']){const source=path.join(workspace,name);if(fs.existsSync(source)){fs.mkdirSync(path.dirname(path.join(destination,name)),{recursive:true});fs.copyFileSync(source,path.join(destination,name));}}
+for(const name of ['SECURITY.md','CHANGELOG.md','docs/security-review-2026-10-21.md','docs/START-HERE.md','docs/research-workflow.svg']){const source=path.join(workspace,name);if(fs.existsSync(source)){fs.mkdirSync(path.dirname(path.join(destination,name)),{recursive:true});fs.copyFileSync(source,path.join(destination,name));}}
 fs.copyFileSync(path.join(workspace,'dashboard/desktop/PUBLIC-README.md'),path.join(destination,'README.md'));
 fs.copyFileSync(path.join(workspace,'dashboard/desktop/VALIDATION.md'),path.join(destination,'VALIDATION.md'));
 fs.writeFileSync(path.join(destination,'package.json'),JSON.stringify({name:'skill-atlas',version:'1.0.0',private:true,scripts:{start:'npm --prefix dashboard start',stop:'node dashboard/scripts/start-local.mjs --stop','app:mac':'node dashboard/scripts/build-mac-app.mjs',test:'npm test --prefix dashboard',typecheck:'npm run typecheck --prefix dashboard',build:'npm run build --prefix dashboard'}},null,2));

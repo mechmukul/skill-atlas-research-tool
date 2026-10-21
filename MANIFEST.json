@@ -7,13 +7,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1077,
-      "sha256": "bf4a2e7846191ce507f2b9015ba20483c4020810ba0927e6edafa81fb0c17782"
+      "bytes": 1498,
+      "sha256": "1891de0943310c23216c20097067f281f4c014253c3270dcd8173059ac162d74"
     },
     {
       "path": "README.md",
-      "bytes": 9989,
-      "sha256": "7ffb891035c17619b5d89190d6b64019e50979348964caa98a49f94748e414f6"
+      "bytes": 12096,
+      "sha256": "1d44d4e590cabdb8f427026f9a42b07302ed4d4686dd09891c705886006086d2"
     },
     {
       "path": "SECURITY.md",
@@ -32,8 +32,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 5807,
-      "sha256": "9cd01e82ca03684441e504bcbd6cf0ebdc99421ace40340e0779cc23c0e28c6c"
+      "bytes": 6707,
+      "sha256": "4d3de600f6d7064248861b83365e4796cbd80331a90249bc0c13505b4d1765e5"
     },
     {
       "path": "dashboard/.npmrc",
@@ -782,8 +782,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 9989,
-      "sha256": "7ffb891035c17619b5d89190d6b64019e50979348964caa98a49f94748e414f6"
+      "bytes": 12096,
+      "sha256": "1d44d4e590cabdb8f427026f9a42b07302ed4d4686dd09891c705886006086d2"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -797,8 +797,8 @@
     },
     {
       "path": "dashboard/desktop/VALIDATION.md",
-      "bytes": 5807,
-      "sha256": "9cd01e82ca03684441e504bcbd6cf0ebdc99421ace40340e0779cc23c0e28c6c"
+      "bytes": 6707,
+      "sha256": "4d3de600f6d7064248861b83365e4796cbd80331a90249bc0c13505b4d1765e5"
     },
     {
       "path": "dashboard/drizzle.config.ts",
@@ -1057,8 +1057,8 @@
     },
     {
       "path": "dashboard/scripts/package-skeleton.mjs",
-      "bytes": 4713,
-      "sha256": "0190b184f1c1ab32d12d6606c0ff4d8de2e9bb510866da608a14640d0c4d4be1"
+      "bytes": 4763,
+      "sha256": "833bee428378225098f6dc05cc562996c662407ed6379c3573e156c293397682"
     },
     {
       "path": "dashboard/scripts/start-local.mjs",
@@ -1419,6 +1419,46 @@
       "path": "dashboard/workflows/research-agent/SKILL.md",
       "bytes": 400,
       "sha256": "dcc634c22916f41f683bb054dd9efa74ec701eb44e27852189fad9fb0e2267f3"
+    },
+    {
+      "path": "docs/START-HERE.md",
+      "bytes": 7273,
+      "sha256": "0def442e405aabd9b89097aa4d7ce13a0e403c38abdf96330c0b63b11156af6f"
+    },
+    {
+      "path": "docs/research-workflow.svg",
+      "bytes": 4777,
+      "sha256": "9d75d6b2b50b29eca37b532f59df2048362ecf4c3cff303d5c0555e91934af29"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/01-onboarding.jpg",
+      "bytes": 43894,
+      "sha256": "5d1ed6bd3c2d9486627d2069af4da2f5d1fbc32d69b40840453f8144caa7e751"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/02-welcome.jpg",
+      "bytes": 39567,
+      "sha256": "bc23a01e5df54b0af2b493fdc2f278909591fcb7b1ec14774c8745db5e330b3b"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/03-empty-workspace.jpg",
+      "bytes": 82646,
+      "sha256": "8a2ab3366856896b1bb646dd716611cb3b7e29482d69e36f704475f55d1d7c64"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/04-empty-papers.jpg",
+      "bytes": 82305,
+      "sha256": "5e09dec24a688e6919378ceb94e8c9738847c40686c6020dded47430249f51c7"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/05-import-papers.jpg",
+      "bytes": 85607,
+      "sha256": "91c81c7c0f4a8eebc4ab35c8c3d9e4fc0c694e579ff078180439645e89660c9b"
+    },
+    {
+      "path": "docs/screenshots/fresh-install/06-empty-library.jpg",
+      "bytes": 173962,
+      "sha256": "605b924547bcdfc4ae31fea26ca6faf98e5d591ddf9ff772967b19b00c58ef24"
     },
     {
       "path": "docs/screenshots/paper-library.png",

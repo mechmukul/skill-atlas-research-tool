@@ -1,5 +1,11 @@
 # Changelog
 
+## Documentation update — 21 October 2026
+
+- Added a plain-English research-desk guide, five-step workflow graphic and six genuine fresh-install screenshots using empty isolated state and fictional profile details.
+- Clarified skeleton contents, optional AI/data handling and the distinction between collected, fully read and verified.
+- App version and UI remain 1.0.0; the original v1.0.0 tag and ZIP are unchanged.
+
 ## 1.0.0 — 21 October 2026
 
 First versioned baseline of the current Skill Atlas interface. The existing UI is retained; exploratory Research overview, Reading desk and Synthesis studio previews are not shipped.

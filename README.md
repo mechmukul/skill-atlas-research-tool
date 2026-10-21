@@ -1,8 +1,31 @@
 # Skill Atlas
 
-**Keep your research in one local workspace—from the first paper to a source-linked draft.**
+**Your research desk—with your papers, notes and ideas within reach.**
 
-Skill Atlas brings your papers, research questions, AI-assisted analyses, evidence passages, personal notes, screening decisions and writing together. Open it as a Mac application without opening ChatGPT, or use it in your browser. Create a researcher profile and keep up to **five separate research topics**, each with its own files, database, drafts and analysis history.
+Skill Atlas keeps your PDFs, useful passages, notes and writing together on your Mac. Give each project its own topic—up to **five separate topics**—and pick up where you left off. You can invite Codex as an optional reading helper; you check the sources and make the decisions. Open Atlas as a Mac application without opening ChatGPT, or use it in your browser.
+
+## Your research desk, explained simply
+
+Papers in one folder, notes in another, and that brilliant quote… somewhere? **Skill Atlas helps keep them connected.** Bring your papers, save useful passages, add your own thinking and develop your writing in the same topic.
+
+![Skill Atlas research journey: make a home, bring papers, read and collect, think and check, write and export](docs/research-workflow.svg)
+
+**One question → your papers → useful passages → your judgement → your writing.** Codex can be an optional reading helper along the way; you remain in charge of checking the sources.
+
+[Take the plain-English tour](docs/START-HERE.md) · [See a fresh installation](docs/START-HERE.md#what-does-a-fresh-installation-actually-look-like) · [Install and run](#start)
+
+## What a fresh installation looks like
+
+You start with a profile form and **your own empty topic**—not the research collection shown in the populated screenshots further down. Built-in workflows are included; papers, analyses and personal notes are yours to add. The owl in the older example gallery is a separate desktop companion, not part of Atlas.
+
+| First launch | After setting up a topic |
+| --- | --- |
+| ![Fresh onboarding form before profile details are entered](docs/screenshots/fresh-install/01-onboarding.jpg) | ![Fresh workspace with zero papers, zero AI drafts and zero researcher-reviewed papers](docs/screenshots/fresh-install/03-empty-workspace.jpg) |
+| Add your name and first topic. | Add papers, describe your question and begin your notes. |
+
+These are actual v1.0 captures from an isolated empty installation. The later screen uses fictional “Alex Researcher” details; no papers were imported and Codex stayed disconnected. Theme depends on the chosen appearance. [See all six fresh-install previews and the first-paper steps](docs/START-HERE.md).
+
+**Collected ≠ fully read ≠ verified.** Saving a passage, finishing a paper and checking a claim are different achievements. AI completion does not replace your review.
 
 ## Version 1.0
 
@@ -34,7 +57,7 @@ Expand the progress widget to see reading, collection and verification separatel
 
 </details>
 
-Screenshots show an example populated workspace; fresh installations start empty. The owl is a separate desktop companion overlay.
+These older supplied screenshots show an example populated workspace, not bundled sample research or the first-run state. Use the fresh-install tour above to see a new installation. The owl is a separate desktop companion overlay.
 
 ## What it does
 
