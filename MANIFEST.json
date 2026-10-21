@@ -7,13 +7,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1498,
-      "sha256": "1891de0943310c23216c20097067f281f4c014253c3270dcd8173059ac162d74"
+      "bytes": 1612,
+      "sha256": "d5c90131f73de82150f8cebcf85bdc987220e1c3d67322474796f815834d9d5a"
     },
     {
       "path": "README.md",
-      "bytes": 12096,
-      "sha256": "1d44d4e590cabdb8f427026f9a42b07302ed4d4686dd09891c705886006086d2"
+      "bytes": 12689,
+      "sha256": "833d0d7ed065ad2103c9307882c0902985b6f944ac95fe4e337df84c4242f287"
     },
     {
       "path": "SECURITY.md",
@@ -782,8 +782,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 12096,
-      "sha256": "1d44d4e590cabdb8f427026f9a42b07302ed4d4686dd09891c705886006086d2"
+      "bytes": 12689,
+      "sha256": "833d0d7ed065ad2103c9307882c0902985b6f944ac95fe4e337df84c4242f287"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -1474,6 +1474,11 @@
       "path": "docs/screenshots/research-workspace.png",
       "bytes": 604090,
       "sha256": "15e7b2121ba0de057007b325e7b3064f4acdc591b308f36c7745f7cec1481f14"
+    },
+    {
+      "path": "docs/screenshots/video/app-demo.jpg",
+      "bytes": 64454,
+      "sha256": "c6d0d6c49f17aee34648635fd07bc35cd9cf577dbb3f208274405b96525fa0df"
     },
     {
       "path": "docs/screenshots/welcome-dark.png",

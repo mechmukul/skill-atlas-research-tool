@@ -14,6 +14,12 @@ Papers in one folder, notes in another, and that brilliant quote… somewhere? *
 
 [Take the plain-English tour](docs/START-HERE.md) · [See a fresh installation](docs/START-HERE.md#what-does-a-fresh-installation-actually-look-like) · [Install and run](#start)
 
+## Watch the app demo
+
+[![Watch the Skill Atlas app walkthrough](docs/screenshots/video/app-demo.jpg)](https://github.com/mechmukul/skill-atlas-research-tool/releases/download/v1.0.0/skill-atlas-demo.mp4)
+
+**[Watch or download the 82-second walkthrough (MP4, approximately 250 MB)](https://github.com/mechmukul/skill-atlas-research-tool/releases/download/v1.0.0/skill-atlas-demo.mp4)** — a screen recording supplied by the creator showing the application in use. Your browser may play the video or download it. The video is hosted as a release attachment to keep the source checkout small.
+
 ## What a fresh installation looks like
 
 You start with a profile form and **your own empty topic**—not the research collection shown in the populated screenshots further down. Built-in workflows are included; papers, analyses and personal notes are yours to add. The owl in the older example gallery is a separate desktop companion, not part of Atlas.

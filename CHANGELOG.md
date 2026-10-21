@@ -2,6 +2,8 @@
 
 ## Documentation update — 21 October 2026
 
+- Added the creator-supplied 82-second MP4 walkthrough as a release attachment, with a clickable README preview.
+
 - Added a plain-English research-desk guide, five-step workflow graphic and six genuine fresh-install screenshots using empty isolated state and fictional profile details.
 - Clarified skeleton contents, optional AI/data handling and the distinction between collected, fully read and verified.
 - App version and UI remain 1.0.0; the original v1.0.0 tag and ZIP are unchanged.
