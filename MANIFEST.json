@@ -7,13 +7,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1612,
-      "sha256": "d5c90131f73de82150f8cebcf85bdc987220e1c3d67322474796f815834d9d5a"
+      "bytes": 1743,
+      "sha256": "7727665074a2a397755e5650178437d62c6aeff8c9ddfda2559c05a9b6eaee11"
     },
     {
       "path": "README.md",
-      "bytes": 12689,
-      "sha256": "833d0d7ed065ad2103c9307882c0902985b6f944ac95fe4e337df84c4242f287"
+      "bytes": 12177,
+      "sha256": "42c7582354fe79173858d341e52037311357eb0b25b18b4367e14703ae5a7b27"
     },
     {
       "path": "SECURITY.md",
@@ -782,8 +782,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 12689,
-      "sha256": "833d0d7ed065ad2103c9307882c0902985b6f944ac95fe4e337df84c4242f287"
+      "bytes": 12177,
+      "sha256": "42c7582354fe79173858d341e52037311357eb0b25b18b4367e14703ae5a7b27"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -1474,6 +1474,11 @@
       "path": "docs/screenshots/research-workspace.png",
       "bytes": 604090,
       "sha256": "15e7b2121ba0de057007b325e7b3064f4acdc591b308f36c7745f7cec1481f14"
+    },
+    {
+      "path": "docs/screenshots/social/skill-atlas-social.png",
+      "bytes": 72276,
+      "sha256": "abb62f4b946a9797b4f6863b1ba84709e1df67c30cb24566f901598ba7a3b8a6"
     },
     {
       "path": "docs/screenshots/video/app-demo.jpg",

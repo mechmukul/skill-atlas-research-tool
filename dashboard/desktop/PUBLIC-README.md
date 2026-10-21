@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/a604f909-12dd-4b71-a3d9-fd2fdd0d6643
+
 # Skill Atlas
 
 **Your research desk—with your papers, notes and ideas within reach.**
@@ -13,12 +15,6 @@ Papers in one folder, notes in another, and that brilliant quote… somewhere? *
 **One question → your papers → useful passages → your judgement → your writing.** Codex can be an optional reading helper along the way; you remain in charge of checking the sources.
 
 [Take the plain-English tour](docs/START-HERE.md) · [See a fresh installation](docs/START-HERE.md#what-does-a-fresh-installation-actually-look-like) · [Install and run](#start)
-
-## Watch the app demo
-
-[![Watch the Skill Atlas app walkthrough](docs/screenshots/video/app-demo.jpg)](https://github.com/mechmukul/skill-atlas-research-tool/releases/download/v1.0.0/skill-atlas-demo.mp4)
-
-**[Watch or download the 82-second walkthrough (MP4, approximately 250 MB)](https://github.com/mechmukul/skill-atlas-research-tool/releases/download/v1.0.0/skill-atlas-demo.mp4)** — a screen recording supplied by the creator showing the application in use. Your browser may play the video or download it. The video is hosted as a release attachment to keep the source checkout small.
 
 ## What a fresh installation looks like
 

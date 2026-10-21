@@ -2,6 +2,8 @@
 
 ## Documentation update — 21 October 2026
 
+- Moved the walkthrough to the first README element as a native inline video attachment and added a branded social sharing image.
+
 - Added the creator-supplied 82-second MP4 walkthrough as a release attachment, with a clickable README preview.
 
 - Added a plain-English research-desk guide, five-step workflow graphic and six genuine fresh-install screenshots using empty isolated state and fictional profile details.
