@@ -1,0 +1,14 @@
+# Changelog
+
+## 1.0.0 — 21 October 2026
+
+First versioned baseline of the current Skill Atlas interface. The existing UI is retained; exploratory Research overview, Reading desk and Synthesis studio previews are not shipped.
+
+- Local Mac application and browser startup/stop workflow.
+- Researcher profile and up to five research topics.
+- PDF library, source-linked evidence and notes, highlight markers, collapsible reading/evidence metrics, drafts, exports and optional Codex analysis continuity.
+- README visual tour with five supplied screenshots.
+- Published security policy and source-review summary with seven conditional validation leads and explicit execution/scope limits; no security fixes or runtime security certification claimed.
+- Version metadata aligned to 1.0.0 and package manifest refreshed.
+
+This is a source/skeleton release. No new signed or notarised Mac binary is attached. Historical functional validation and existing lint/installation limitations are recorded in VALIDATION.md; those checks were not rerun for this metadata/documentation release.

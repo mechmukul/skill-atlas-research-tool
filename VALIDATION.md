@@ -40,3 +40,9 @@
 - The same Agile Research Framework paper supplied in the screenshot was checked in dark mode. Touch-emulation checks passed with 40-pixel mode/zoom fields and accessible progress controls.
 - All 110 automated tests passed; TypeScript and production compilation passed. Existing full-project lint limitations remain documented above.
 - README now explains the product, research workflow, centralised materials, source traceability, marker legend and the role of researcher judgement.
+
+## Version 1.0 documentation and security review — 21 October 2026
+
+- Current production UI retained; exploratory layouts excluded from the release.
+- Security review: 29 coverage units, zero confirmed vulnerabilities and seven conditional needs-validation records; candidate and final source-record reviews performed separately. Findings and coverage schema validators passed. Runtime tests were not executed under this audit. See docs/security-review-2026-10-21.md for clean-package applicability.
+- This release changes documentation, version/packaging metadata and manifest hashes. Historical application tests above are not represented as freshly rerun. No new signed/notarised binary or fresh network dependency install is claimed.

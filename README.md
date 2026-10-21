@@ -4,6 +4,12 @@
 
 Skill Atlas brings your papers, research questions, AI-assisted analyses, evidence passages, personal notes, screening decisions and writing together. Open it as a Mac application without opening ChatGPT, or use it in your browser. Create a researcher profile and keep up to **five separate research topics**, each with its own files, database, drafts and analysis history.
 
+## Version 1.0
+
+**1.0.0 keeps the current Skill Atlas UI.** The three exploratory layouts are not included in this release. The screenshots below show the retained interface.
+
+See the [changelog](CHANGELOG.md), [security policy](SECURITY.md) and [source security review](docs/security-review-2026-10-21.md). The review recorded **0 confirmed vulnerabilities and 7 conditional leads requiring validation** in the maintained project, including legacy paths omitted from this package. Runtime exploit testing and dependency/CVE scanning were not performed; this is not security certification, and no security fixes are claimed in this release.
+
 ## A look inside Skill Atlas
 
 Explore the welcome screen, research workspace and paper library in light and dark themes.

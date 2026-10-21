@@ -6,9 +6,19 @@
       "sha256": "223e73e44005470264b3fb68ce0ff32b554b591f9319410b98cc1a813ead16ef"
     },
     {
+      "path": "CHANGELOG.md",
+      "bytes": 1077,
+      "sha256": "bf4a2e7846191ce507f2b9015ba20483c4020810ba0927e6edafa81fb0c17782"
+    },
+    {
       "path": "README.md",
-      "bytes": 9347,
-      "sha256": "33f119da6d251fc9ffce8da220763953ab34e44e910916a54563ccf2f5732bac"
+      "bytes": 9989,
+      "sha256": "7ffb891035c17619b5d89190d6b64019e50979348964caa98a49f94748e414f6"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2179,
+      "sha256": "57c3ecca3d4fd51a4dce90edcd7f20d14290514d4b3868805ab46aaece0934d0"
     },
     {
       "path": "Start Skill Atlas.command",
@@ -22,8 +32,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 5066,
-      "sha256": "5b55b9ccc72e857c575430d2440e5b3b44e79daf40020f55de2ed950f88c3b1f"
+      "bytes": 5807,
+      "sha256": "9cd01e82ca03684441e504bcbd6cf0ebdc99421ace40340e0779cc23c0e28c6c"
     },
     {
       "path": "dashboard/.npmrc",
@@ -772,8 +782,8 @@
     },
     {
       "path": "dashboard/desktop/PUBLIC-README.md",
-      "bytes": 9347,
-      "sha256": "33f119da6d251fc9ffce8da220763953ab34e44e910916a54563ccf2f5732bac"
+      "bytes": 9989,
+      "sha256": "7ffb891035c17619b5d89190d6b64019e50979348964caa98a49f94748e414f6"
     },
     {
       "path": "dashboard/desktop/RenderIcon.swift",
@@ -787,8 +797,8 @@
     },
     {
       "path": "dashboard/desktop/VALIDATION.md",
-      "bytes": 5066,
-      "sha256": "5b55b9ccc72e857c575430d2440e5b3b44e79daf40020f55de2ed950f88c3b1f"
+      "bytes": 5807,
+      "sha256": "9cd01e82ca03684441e504bcbd6cf0ebdc99421ace40340e0779cc23c0e28c6c"
     },
     {
       "path": "dashboard/drizzle.config.ts",
@@ -983,12 +993,12 @@
     {
       "path": "dashboard/package-lock.json",
       "bytes": 525873,
-      "sha256": "998d338f16b805d54efb6acf877d60f7a72c4697b24e6f8410a2f3700fa0b72f"
+      "sha256": "c6bc9d29265ae36ee2b9595b45200b2eb24ae730cfc56f5c4fb33b702fb909b0"
     },
     {
       "path": "dashboard/package.json",
       "bytes": 2195,
-      "sha256": "f24c5e93fc4c38e1fc036b23e5c7a7a76021797bbf619930d52b99c8f1425c00"
+      "sha256": "068e47916c693032bcda010fecf9f53c89f7e790442e8d17383afc1565b5aade"
     },
     {
       "path": "dashboard/postcss.config.mjs",
@@ -1032,8 +1042,8 @@
     },
     {
       "path": "dashboard/scripts/build-mac-app.mjs",
-      "bytes": 4233,
-      "sha256": "1ce2f8ea4d275e01169533f70f6020ee7305aad925c15107e15de3f54e076b59"
+      "bytes": 4235,
+      "sha256": "7a8de81fbe340a9e510f2813879924aff6dc04ca7f98de21f89031f3c132a149"
     },
     {
       "path": "dashboard/scripts/install-ci.mjs",
@@ -1047,8 +1057,8 @@
     },
     {
       "path": "dashboard/scripts/package-skeleton.mjs",
-      "bytes": 4401,
-      "sha256": "4e001b7181a1585510bc8952c259712f3e96fefc36456ecc0002dd4df9d5d5f5"
+      "bytes": 4713,
+      "sha256": "0190b184f1c1ab32d12d6606c0ff4d8de2e9bb510866da608a14640d0c4d4be1"
     },
     {
       "path": "dashboard/scripts/start-local.mjs",
@@ -1436,9 +1446,14 @@
       "sha256": "36393ab97ff5ac2c2b61826c1a9c310753f1d99c6d339be191a6f87cb785fd09"
     },
     {
+      "path": "docs/security-review-2026-10-21.md",
+      "bytes": 5975,
+      "sha256": "43dddf12ed052f9f3cd02318e54b8cbcec38c00e38fcd199b73d592424c94ae9"
+    },
+    {
       "path": "package.json",
-      "bytes": 379,
-      "sha256": "3f343889b5288206644818ccca8b7953d86f65770b82723262a7e688b1209901"
+      "bytes": 402,
+      "sha256": "b52d243c01032e6157375387ca897bcad9e848f158f9be56dba3eb801a89ba50"
     }
   ],
   "excluded": [
@@ -1450,5 +1465,6 @@
     "Machine-specific integration and paper mappings",
     "Downloaded upstream repositories",
     "Built applications and dependencies"
-  ]
+  ],
+  "version": "1.0.0"
 }

@@ -8,5 +8,6 @@
     "test": "npm test --prefix dashboard",
     "typecheck": "npm run typecheck --prefix dashboard",
     "build": "npm run build --prefix dashboard"
-  }
+  },
+  "version": "1.0.0"
 }
